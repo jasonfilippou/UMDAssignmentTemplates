@@ -1,0 +1,69 @@
+% Basic math
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amssymb,amsthm}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{array, nicefrac, mathtools}
+
+% Theorems, definitions, equations, lemmas
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defn}{Definition}
+\newtheorem{rem}[thm]{Remark}
+\numberwithin{equation}{section}
+\newtheorem*{defn*}{Definition} % Theorem environments with no numbering
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{thm*}{Theorem}
+
+% For negation and quantifiers in Discrete Math
+\newcommand{\shortsim}{\raise.17ex\hbox{$\scriptstyle \sim$}}
+\renewcommand{\neg}{\shortsim}
+\renewcommand{\nexists}{\neg\exists}
+\newcommand{\nequiv}{\ensuremath{\not\equiv}}
+
+% Some larger symbols for clarity.
+\newcommand{\Sum}{\ensuremath{\mathlarger{\sum}}}
+\newcommand{\Prod}{\ensuremath{\mathlarger{\prod}}}
+\newcommand{\Ell}{\ensuremath{\mathcal{L}}}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+%Some number sets
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Nplus}{\ensuremath{\mathbb{N}^+}}
+\newcommand{\Nstar}{\ensuremath{\mathbb{N}^*}} % pretty much equivalent to Nplus
+\newcommand{\Neven}{\ensuremath{\mathbb{N}^\text{even}}}
+\newcommand{\Nstareven}{\ensuremath{\mathbb{N}^*_\text{even}}}
+\newcommand{\Nodd}{\ensuremath{\mathbb{N}^\text{odd}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Zstar}{\ensuremath{\mathbb{Z}^*}}
+\newcommand{\Zstareven}{\ensuremath{\mathbb{Z}^*_\text{even}}}
+\newcommand{\Zplus}{\ensuremath{\mathbb{Z}^+}}
+\newcommand{\Zminus}{\ensuremath{\mathbb{Z}^-}}
+\newcommand{\Zeven}{\ensuremath{\mathbb{Z}^\text{even}}}
+\newcommand{\Zodd}{\ensuremath{\mathbb{Z}^\text{odd}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Qplus}{\ensuremath{\mathbb{Q}^+}}
+\newcommand{\Qstar}{\ensuremath{\mathbb{Q}^*}}
+\newcommand{\Qminus}{\ensuremath{\mathbb{Q}^-}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Rminus}{\ensuremath{\mathbb{R}^-}}
+\newcommand{\Rplus}{\ensuremath{\mathbb{R}^+}}
+\newcommand{\Rstar}{\ensuremath{\mathbb{R}^*}}
+\newcommand{\I}{\ensuremath{\mathbb{R - Q}}}
+\renewcommand{\P}{\ensuremath{\mathbf{P}}}
+
+% Induction-related
+\newcommand{\indstart}[1]{Let $P($#1$)$ be the proposition we are attempting to prove true. We proceed via mathematical induction on #1.}
+\newcommand{\IB}{\textbf{Inductive Base: }}
+\newcommand{\IH}{\textbf{Inductive Hypothesis: }}
+\newcommand{\IS}{\textbf{Inductive Step: }}
+\newcommand{\derivexpl}[1]{\text{ \emph { (#1) } } \\ } % Textual explanation of line-by-line derivations
+
+% An inner list shorthand for one of my Discrete Math exam subjects.
+\newcommand{\innerlist}{
+	\begin{enumerate}[label=(\roman*)]
+		\item $D_T=$ \myline{2in}
+		\item $D_F=$ \myline{2in}
+	\end{enumerate}
+}

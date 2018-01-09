@@ -1,0 +1,5 @@
+\usepackage{censor} 
+\usepackage{textcomp} % for the cent symbol
+\usepackage{multido}
+% Repeating commands many times!
+\newcommand{\Repeat}{\multido{\i=1+1}} 

@@ -1,0 +1,109 @@
+% A blank page
+\newcommand{\blankpage}{
+\clearpage
+\vspace*{\fill}
+\begin{center}
+	\begin{minipage}{.7\textwidth}
+	\Large \textbf{THIS PAGE INTENTIONALLY LEFT BLANK}
+\end{minipage}
+\end{center}
+\vfill % equivalent to \vspace{\fill}
+\clearpage
+}
+
+\newcommand{\myline}[1]{\underline{\hspace{#1}}}
+\newcommand{\problemhdr}[1]{\noindent{\textbf{\Large Problem #1} \\[.2cm]}}
+\newcommand{\questionhdr}[1]{ \noindent{\emph{\large Question #1} \\[.2cm]}}
+
+% Some standard centering and italicization of text.
+\newcommand{\frontrowcenter}[1]{\begin{center}{\em \Large ( #1 ) }\end{center}}
+
+
+% Setting some flags:
+%\setlength{\parindent}{2em}
+%\setlength{\itemindent}{.5in}
+
+% Not so basic package imports
+\usepackage[bottom]{footmisc} % To keep the footnote at the bottom even after putting answering environments.
+\usepackage{verbatim}
+\usepackage{booktabs} % for multicolumn
+\usepackage[font=small,skip=0pt, justification=centering]{caption, subcaption}
+\usepackage{float,relsize,setspace, fancyhdr,enumitem,pbox,cleveref,multicol}
+
+% Space for students' answers
+\newcommand{\answerspace}[1]{
+	\afterquestionvskip
+	\begin{center}
+		\textbf{BEGIN YOUR ANSWER TO #1 BELOW THIS LINE} \\ 
+		\hrulefill
+		
+		\pagebreak 
+	\end{center}
+}
+
+\newcommand{\additionalanswerspace}[1]{
+	\afterquestionvskip
+	\begin{center}
+		\textbf{CONTINUE YOUR ANSWER TO #1 BELOW THIS LINE } \\ 
+		\hrulefill
+		\pagebreak
+	\end{center}
+}
+
+% Some  environments for having students showing their work
+\newcommand{\showyourwork}[1]{
+	\afterquestionvskip
+	\begin{center}
+		\textbf{SHOW YOUR WORK FOR #1 BELOW THIS LINE} \\ 
+		\hrulefill
+		\pagebreak 
+	\end{center}
+}
+
+\newcommand{\showyourworkcontd}[1]{
+	\afterquestionvskip
+	\begin{center}
+		\textbf{CONTINUE SHOWING YOUR WORK FOR #1 BELOW THIS LINE} \\ 
+		\hrulefill
+		\pagebreak 
+	\end{center}
+}
+
+\newcommand{\showyourworkopt}[1]{
+	\afterquestionvskip
+	\begin{center}
+		\textbf{OPTIONALLY, SHOW YOUR WORK FOR #1 BELOW THIS LINE} \\ 
+		\hrulefill
+		\pagebreak 
+	\end{center}
+}
+
+\newcommand{\showyourworkoptcontd}[1]{
+	\afterquestionvskip
+	\begin{center}
+		\textbf{CONTINUE OPTIONALLY SHOWING YOUR WORK FOR #1 BELOW THIS LINE} \\ 
+		\hrulefill
+		\pagebreak 
+	\end{center}
+}
+
+
+\newcommand{\freespace}[1]{
+	\afterquestionvskip
+	\begin{center}
+		\large \textbf{SOME EMPTY SPACE FOR YOU IF YOU NEED IT} \\ 
+		\hrulefill
+		\pagebreak 
+	\end{center}
+}
+
+\newcommand{\notespage}{
+	\pagebreak
+	\begin{center}
+		\Large \textbf{SCRAP PAPER} \\ \hrulefill
+	\end{center}
+}
+
+
+% Space for T/F:
+\newcommand{\tfline}{\myline{.5cm}}
