@@ -10,18 +10,16 @@
 \usepackage[bottom]{footmisc} % To keep the footnote at the bottom even after putting answering environments.
 \usepackage{verbatim}
 \usepackage{booktabs} % for multicolumn
-\usepackage[font=small,skip=0pt, justification=centering]{caption, subcaption}
+\usepackage[font=normalsize,skip=0pt, justification=centering]{caption, subcaption}
 \usepackage{float,relsize,setspace, fancyhdr,enumitem,pbox,cleveref,multicol}
 
 % A blank page
 \newcommand{\blankpage}{
 \clearpage
 \vspace*{\fill}
-\begin{center}
-	\begin{minipage}{.7\textwidth}
-	\Large \textbf{THIS PAGE INTENTIONALLY LEFT BLANK}
-\end{minipage}
-\end{center}
+	\begin{minipage}{\textwidth}
+		\hspace{.5in} \Large \textbf{THIS PAGE INTENTIONALLY LEFT BLANK}\\
+	\end{minipage}
 \vfill % equivalent to \vspace{\fill}
 \clearpage
 }
@@ -84,10 +82,10 @@
 }
 
 
-\newcommand{\freespace}[1]{
+\newcommand{\freespace}{
 	\afterquestionvskip
 	\begin{center}
-		\large \textbf{SOME EMPTY SPACE FOR YOU IF YOU NEED IT} \\ 
+		\large \textbf{SOME EMPTY SPACE FOR YOU BELOW, IF YOU NEED IT} \\ 
 		\hrulefill
 		\pagebreak 
 	\end{center}
@@ -103,3 +101,14 @@
 
 % Space for T/F:
 \newcommand{\tfline}{\myline{.5cm}}
+
+% For sets:
+\newcommand{\curlybraces}[1]{\ensuremath{\lbrace #1 \rbrace}}
+
+% For cardinalities:
+\newcommand{\crd}[1]{\ensuremath{ \big \vert #1 \big \vert }}
+
+% \item environments coupled with lines at the end.
+\newcommand{\tfitem}[1]{\item #1 \tfline}
+\newcommand{\setitem}[1]{\tfitem{$\curlybraces{#1}$} }
+\newcommand{\lineitem}[2]{\item #1 \myline{#2}}
