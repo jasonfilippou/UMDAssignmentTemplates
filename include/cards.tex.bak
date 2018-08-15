@@ -1,8 +1,0 @@
-% Playing card support
-\DeclareSymbolFont{extraup}{U}{zavm}{m}{n}
-\DeclareMathSymbol{\varheart}{\mathalpha}{extraup}{86}
-\DeclareMathSymbol{\vardiamond}{\mathalpha}{extraup}{87}
-\newcommand{\hrt}{\textcolor{red}{$\varheart$}}
-\newcommand{\dmd}{\textcolor{red}{$\vardiamond$}}
-\newcommand{\spd}{$\spadesuit$}
-\newcommand{\clb}{$\clubsuit$}

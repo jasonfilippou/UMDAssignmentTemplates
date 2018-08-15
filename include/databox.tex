@@ -1,30 +1,41 @@
-\newcommand{\databox}[6]{
+\newcommand{\databox}[5]{
    \pagestyle{myheadings}
    \thispagestyle{plain}
    \newpage
    \setcounter{page}{1}
    \noindent
+
    \begin{center}
+      \hspace*{-.7cm}
 	   \framebox{
 	      \vbox{
 	        \vspace{2mm}
-		    \hbox to 6.9in { {\bf #1 \hfill Sections: #2} }
+		    \hbox to 7.3in { {\bf #1 \hfill Sections: #2} }
 	    	\vspace{8mm}
-	        \hbox to 6.9in { {\huge  \hfill  Homework #3 \hfill } }
+	        \hbox to 6.9in { {\huge  \hfill  #3 \hfill } }
 	        \vspace{4mm}
-     	        \hbox to 6.9in { {\large  \hfill   \textbf{Posted}: #4 \hfill } }
-     	        \vspace{2mm}
-	       \hbox to 6.9in { { \large  \hfill  \textbf{Due} (\textit{early}): #5 \hfill } }
-       	        \vspace{2mm}
-     	       \hbox to 6.9in { { \large  \hfill  \textbf{Due} (\textit{late}): #6 \hfill } }
-         	        \vspace{6mm}
-	        \hbox to 7.2in { {\it Student's first and last name: \myline{2.3in} \hfill Grade (grader only):\myline{.7in}} }
-	        \vspace{2mm}
-	        \hbox to 7.2in {  {\it Student's UID:} \myline{1.4in} \hfill	
-																			\begin{tabular}{|c|c|c|c|c|}\hline
-																				\textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5}    \\ \hline & & & & \\ \hline
-			\end{tabular}										
-	        \vspace{2mm}}
+     	        \hbox to 6.9in { {\Large  \hfill   \textbf{Date}: #4 \hfill }} 
+     	        \vspace{4mm}
+     	        \hbox to 6.9in { {\Large  \hfill   \textbf{Time}: #5 \hfill } }
+       	        \vspace{8mm}
+       	             	        
+       		\begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
+				\textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & 
+				\textbf{P5} & \textbf{P6} & \textbf{P7} & \textbf{TOTAL}\\ 	
+				\hline & & & & & & & \\ 	\hline										
+		\end{tabular}		
+     	         
+       	        \vspace{8mm}
+   \hbox to 7.2in { {\it First and last name ({\bf exactly} as on ELMS): \myline{3in} \hfill} }
+	        \vspace{4mm}
+   \hbox to 7.7in {  {\it UID (9 digits):} \myline{1.4in} \hfill	
+   
+
+		}
+			        \vspace{4mm}
+   \hbox to 7.2in { {\it Section number (4 digits): \myline{1in} \hfill} }												
+	\vspace{2mm}
+			
 	        \begin{center}
 	        	\textbf{University Honor Pledge:} \\[.2in]
 	        	\emph{I pledge on my honor that I have not given or received \\
@@ -38,6 +49,6 @@
 	   	  } % vbox
 	   } % framebox
    \end{center}
-   \markboth{#6-- #1}{#6 -- #1}
+   \markboth{#3-- #1}{#3 -- #1}
    \vspace*{4mm}
 }

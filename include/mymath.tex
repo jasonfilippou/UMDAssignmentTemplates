@@ -52,6 +52,16 @@
 \newcommand{\Rstar}{\ensuremath{\mathbb{R}^*}}
 \newcommand{\I}{\ensuremath{\mathbb{R - Q}}}
 \renewcommand{\P}{\ensuremath{\mathbf{P}}}
+\newcommand{\Pset}[1]{\ensuremath{\mathcal{P}(#1)}}
+
+% An explained mathematical derivation in the form of an unbulleted list item.
+\newcommand{\derivitem}[2]{\item[] $=#1 \qquad \qquad $ \derivexpl{#2}}
+\newcommand{\derivitemnte}[2]{\item[] $#1 \qquad \qquad $ \derivexpl{#2}}
+\newcommand{\derivitemized}[2]{\item $=#1 \qquad \qquad $ \derivexpl{#2}}
+\newcommand{\derivitemizednte}[2]{\item $#1 \qquad \qquad $ \derivexpl{#2}}
+
+% Math and lines.
+\newcommand{\mathitem}[1]{\item $#1$ \hrulefill}
 
 % Induction-related
 \newcommand{\indstart}[1]{Let $P($#1$)$ be the proposition we are attempting to prove true. We proceed via mathematical induction on #1.}
@@ -60,13 +70,11 @@
 \newcommand{\IS}{\textbf{Inductive Step: }}
 \newcommand{\derivexpl}[1]{\text{ \emph { (#1) } } \\ } % Textual explanation of line-by-line derivations
 
-% An explained mathematical derivation in the form of an unbulleted list item.
-\newcommand{\mathitem}[2]{\item[] $#1 \qquad \qquad $ \derivexpl{#2}}
-
 % An inner list shorthand for one of my Discrete Math exam subjects.
 \newcommand{\innerlist}{
-	\begin{enumerate}[label=(\roman*)]
-		\item $D_T=$ \myline{2in}
-		\item $D_F=$ \myline{2in}
-	\end{enumerate}
+	\begin{itemize}
+		\setlength\itemsep{.5em}	
+		\item[-] $D_T=$ \myline{2in}
+		\item[-] $D_F=$ \myline{2in}
+	\end{itemize}
 }
