@@ -1,390 +1,361 @@
+% LaTeX Assignment Template
+% Developed by Jason Filippou (jasonfil@cs.umd.edu)
+% Maintained at https://github.com/JasonFil/UMDAssignmentTemplates
+
 % Document class will always be article for the purposes of UMD assignments
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,12pt]{article}
+
+% Tweak the following based on what you think the current document needs:
+\usepackage[inner=1.5cm,outer=1.5cm,top=2cm,bottom=1.5cm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\setlength{\parindent}{2em}
+\setlength{\itemindent}{.5in}
+%\DeclareMathSizes{12pt}{14pt}{10pt}{8pt}
+
+% Title of the current document
+\title{CMSC250, Spring '18: Final Exam}
+
 
 %%%%%%%%%%%%%  IMPORT MACRO FILES AS NEEDED %%%%%%%%%%%
 \input{include/mymath}
-\input{include/code}
+% \input{include/code} % This is useful for assignments in CMSC420, 132, etc
 \input{include/formatting}
 \input{include/emphasis}
 \input{include/cool}
 \input{include/databox} % Edit this file for variable problem numbers in grading box
-\input{include/cards}
+ \input{include/cards}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Tweak the following based on what you think the current document needs:
-\usepackage[inner=1.5cm,outer=1.5cm,top=2cm,bottom=1.5cm]{geometry}
-\setlength{\parindent}{2em}
-\setlength{\itemindent}{.5in}
+\usepackage{tikz}
+\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
+\newcommand{\whitecircle}[1]{\tikz[baseline=-0.5ex]\draw[black, radius=#1] (0,0) circle ;}
 
-% Title of the current document
-\title{CMSC250, Fall '17: Final Exam}
 
 \begin{document}
 
+
 % Box at the top of every first page.
-\databox{CMSC 250, Fall 2017}{all}{Final Exam}{Friday, 12-15-2017} 
+\databox{CMSC250, Spring 2018}{all}{Final Exam}{Tuesday, 05-15-2018}{04:05pm-06:00pm}
 
-\vspace{-.2in}
+\vspace{-.3in}
 
-\section*{Exam Guidelines / Rules / Assumed Facts}
+\section*{Exam guidelines / rules}
 \label{sec:guidelines}
- 
 \begin{itemize}
-	\item \textbf{Turn off all unapproved electronic devices} (e.g phones, tablets, laptops, but not calculators if you feel you need them). Setting a device on ``silent" or ``sleep" mode does not constitute it being turned \textbf{off}: Your device is turned off if and only if it requires pushing a power button to begin the execution of a bootloader. \textbf{Proctors reserve the right to confiscate an electronic device if it is not turned off according to the definition above.}
-	\item Write \textbf{neatly}. If we can't read your response, you will receive no credit for it. Use the scrap paper provided at the end of the exam for note-taking. You can ask for extra scrap paper if you need it.
-	\item There are \textbf{6 (six)} problems in this exam, with a total grade value that adds to $\mathbf{100}$ \textbf{(one hundred)}, as well as an extra credit problem, worth $\mathbf 1$ {\bf (one)} point.
-%as well as \textbf{an additional extra credit problem}, worth \textbf{1 (one)} point.
-	\item The exam  has been printed \textbf{two-sided}, \textbf{stapled on the top-left corner} and spans $\mathbf{18}$  (\textbf{eighteen}) pages across $\mathbf{9}$ (\textbf{nine}) sheets. The last $\mathbf{2}$ {\bf (two)}  pages are \textbf{scrap paper} for your notes. 
-	\item The total time allocated for this exam is \textbf{115 (one hundred and fifteen)} minutes.
-	\item During the \textbf{last 5 (five) minutes} of the exam, you may \textbf{not} leave the classroom (e.g to go to the bathroom, or because you're done). 
 	
+	\item \textbf{TURN OFF ALL ELECTRONIC DEVICES} (e.g phones, tablets, laptops, {\bf calculators}). Setting a device on ``silent" or ``sleep" mode does \textbf{not} constitute it being turned \textbf{off}: Your device is turned off if and only if it requires \textbf{pushing a power button to begin the execution of a bootloader}. \textbf{Proctors reserve the right to confiscate an electronic device if it is not turned off according to the definition above.}
+		\item The exam is {\bf CLOSED BOOK AND NOTES}.
+		\item {\bf DO NOT RIP PAGES FROM THE EXAM}. You can ask us for \textbf{extra scrap paper} if you need it.
+	\item {\bf WRITE NEATLY}. If we can't read your response, you will receive \textbf{no credit} for it. 
+	\item There are {\bf 7 (seven)} problems in this exam, with a total grade value that adds to $\mathbf{100}$ \textbf{(one hundred)}.
+	\item The exam has been printed \textbf{two-sided}, \textbf{stapled on the top-left corner} and spans {\bf 24 (twenty-four)} pages across {\bf 12 (twelve)} sheets. 
+	\item The total time allocated for this exam is \textbf{115 (one hundred and fifteen)} minutes.
+	\item You may \textbf{not} leave the classroom (e.g to go to the bathroom, or because you're done) during the \textbf{last 5 (five) minutes} of the exam.
 \end{itemize}
+ \vspace{-.2in}
+\section*{Provided materials \& assumed facts}
+ \vspace{-.1in}
+\subsection*{Logic}
+\label{subsec:logic}
 
-\pagebreak
-
-\section*{Provided materials}
-
-Table \ref{tbl:propLogicAxioms} contains a number of logical equivalences that we have discussed in class.
+Table \ref{tbl:propLogicAxioms} contains a number of logical equivalences that we have discussed in class. Recall that, in Logic, the symbol $\equiv$ means ``logically equivalent to". 
 
 \begin{table}[H]
 	\centering
-	\begin{tabular}{|p{2.8in} | c | c |} \hline
+	\renewcommand*{\arraystretch}{1.2}
+	\begin{tabular}{|>{\centering\arraybackslash}p{1.5in} | c | c |} \hline
 		\textbf{Commutativity of binary operators} & $p \land q \equiv q \land p$ & $p \lor q \equiv q \lor p$ \\ \hline
 	\textbf{Associativity of binary operators} & $(p \land q) \land r \equiv p \land (q \land r)$ &  $(p \lor q) \lor r \equiv p \lor (q \lor r)$ \\ \hline
 	\textbf{Distributivity of binary operators} & $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ & $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ \\ \hline
-	\textbf{Identity laws} & $p \land t \equiv p$ & $p \lor c \equiv p$ \\ \hline
-	\textbf{Negation laws} & $p \lor \neg p \equiv t$ & $p \land \neg p \equiv c$ \\ \hline
+	\textbf{Identity laws} & $p \land T \equiv p$ & $p \lor F \equiv p$ \\ \hline
+	\textbf{Negation laws} & $p \lor (\neg p) \equiv T$ & $p \land (\neg p) \equiv F$ \\ \hline
 	\textbf{Double negation} & \multicolumn{2}{c|}{$\neg (\neg p) \equiv p$}  \\ \hline 
 	\textbf{Idempotence} & $p \land p \equiv p$ & $p \lor p \equiv p$ \\ \hline
-	\textbf{De Morgan's axioms} & $\neg (p \land q) \equiv \neg p \lor \neg q$ & $\neg (p \lor q) \equiv \neg p \land \neg q$\\ \hline
-	\textbf{Universal bound laws} & $p \lor t \equiv t$ & $p \land c \equiv c$ \\ \hline
+	\textbf{De Morgan's axioms} & $\neg (p \land q) \equiv (\neg p )\lor (\neg q)$ & $\neg (p \lor q) \equiv (\neg p) \land (\neg q)$\\ \hline
+	\textbf{Universal bound laws} & $p \lor T \equiv T$ & $p \land F \equiv F$ \\ \hline
 	\textbf{Absorption laws} & $p \lor (p \land q) \equiv p$ & $p \land (p \lor q) \equiv p$ \\ \hline
-	\textbf{Negations of contradictions / tautologies} & $\neg c \equiv t$ & $\neg t \equiv c$ \\ \hline
+	\textbf{Negations of contradictions / tautologies} & $\neg F \equiv T$ & $\neg T \equiv F$ \\ \hline
 	\textbf{Equivalence between biconditional and implication} & \multicolumn{2}{c|}{$a \Leftrightarrow b \equiv (a \Rightarrow b) \land (b \Rightarrow a)$} \\ \hline
 	\textbf{Equivalence between implication and disjunction} & \multicolumn{2}{c|}{$a \Rightarrow b \equiv \neg a \lor b$} \\ \hline
 	\end{tabular} \vspace{.1in}
 	\caption{A number of propositional logic axioms you can refer to.}
 	\label{tbl:propLogicAxioms}
 \end{table}
-
-Table \ref{tbl:propLogicRules} contains a number of rules of natural deduction / inference that we have discussed in class.
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}| p{2.8cm}|}\hline
-		\textbf{Modus Ponens} & \textbf{Modus Tollens} & \textbf{Disjunctive addition} & \textbf{Conjunctive addition} & \textbf{Division into Cases}\\ \hline
-			$\begin{aligned}
-		p  \\
-		p \Rightarrow s \\
-		\therefore s
-	\end{aligned}$ & 
-	 $\begin{aligned}
-		\neg s  \\
-		p \Rightarrow s \\
-		\therefore \neg p
-	\end{aligned}$ & 
-	 $\begin{aligned}
-		p  \\
-		\therefore p \lor s
-	\end{aligned}$ &
-	$\begin{aligned}
-		p, s \\
-		\therefore p \land s
-	\end{aligned}$ & 
-	$\begin{aligned}
-		p \lor s \\
- 		p \Rightarrow r \\ 
-		s \Rightarrow r \\
- \therefore r\\
-	\end{aligned}$ \\ \hline
-		 
-		 \textbf{Conjunctive Simplification} & \textbf{Disjunctive syllogism} & \textbf{Hypothetical syllogism} &  \textbf{Resolution}  & \textbf{A bunny with a pancake on its head} \\ \hline
-		 $\begin{aligned}
-		p \land s \\
-		\therefore p, s
-	\end{aligned}$ 	& 
-		$\begin{aligned}
-		p \lor s \\
-		\neg p \\
-		\therefore s
-	\end{aligned}$ &
-	$\begin{aligned}
-		p  \Rightarrow s \\
-		s \Rightarrow r \\
-		\therefore p \Rightarrow r
-	\end{aligned}$ &  
-	$\begin{aligned}
-	p \lor s\\
-	(\neg s )\lor z\\
-	\therefore p \lor z
-	\end{aligned}$ & \vspace{.1cm}
-	\includegraphics[scale=.25]{img/pancake_bunny}\\ \hline
-	\end{tabular} 
-	\caption{Propositional Logic rules of inference / natural deduction you may refer to.}
-	\label{tbl:propLogicRules}
-\end{table} 
-
-You may use the following mathematical facts {\bf without proof}:
-{\large 
-\begin{itemize}
-	\item  $\Z$ is closed under addition, subtraction and multiplication.
-	\item $\N$ is closed under addition and multiplication.
-	\item  $0 \in \N$.
-	\item $\sqrt2$ is an irrational number.
-\end{itemize}
-}
-
+ 
 \pagebreak
 
-Finally, table \ref{tbl:setTheoryAxioms} contains various Set Theory axioms that you can refer to.
+\subsection*{Set Theory}
+\label{subsec:setTheory}
+
+The following are Set Theoretic notation and definitions.
 
 \begin{table}[H]
 	\centering
-\begin{tabular}{| p{1.8in} | c | c |} \hline
-	Commutativity  & $A \cup B = B \cup A$ & $A \cap B = B \cap A$ \\ \hline
-		Associativity of union \& intersection & $(A \cap B) \cap C = A \cap (B \cap C)$ &  $(A \cup B) \cup C = A \cup (B \cup C)$ \\ \hline
-		Distributivity of union \& intersection & $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$ & $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$ \\ \hline
-		Identity laws & $A \cap U = A$ & $A \cup \emptyset = A$ \\ \hline
-		Inverse laws & $A \cup  A^c = U$ & $A \cap A^c = \emptyset$ \\ \hline
-Double complementation &\multicolumn{2}{c|}{ $  (A^c)^c = A$}  \\ \hline  
-		Idempotence & $A \cap A = A$ & $A \cup A = A$ \\ \hline
-		De Morgan's axioms & $  (A \cap B)^c =   A^c \cup   B^c$ & $  (A \cup B)^c =   A^c \cap B^c$\\ \hline
-		Universal bound (Domination) laws & $A \cup U = U$ & $A \cap \emptyset = \emptyset$ \\ \hline
-		Absorption laws & $A \cup (A \cap B) = A$ & $A \cap (A \cup B) = A$ \\ \hline
-	   Absolute Complements of empty set / domain & $  \emptyset^c = U$ & $  U^c = \emptyset$ \\ \hline
-	   Relationship between relative and absolute complement & \multicolumn{2}{c|}{$A - B = A \cap B^c$ } \\ \hline 
-	\end{tabular} 
-	\caption{Various Set Theory axioms you may refer to.}
-	\label{tbl:setTheoryAxioms}
+	\renewcommand*{\arraystretch}{1.4}
+	\begin{tabular}{| c | c | c | } \hline 
+		{\large \bf Operation} & 		{\large \bf Symbol} &  {\large \bf Definition } \\  \hline 
+		\textbf{Membership} & $x \in A$ & $x$ is a member of set $A$ \\ \hline
+		\textbf{Non-membership} & $x \notin A$ & $ \neg (x \in A)$ \\ \hline
+		\textbf{Union} & $A \cup B$ & $\{ (x \in A) \lor (x \in B)$\}   \\ \hline
+		\textbf{Intersection} & $A \cap B$ & $\{ (x \in A) \land (x \in B)$\}   \\ \hline
+		\textbf{Relative complement of} $\mathbf B$ \textbf{given} $\mathbf A$ & $A - B$ & $\{ (x \in A) \land (x \notin B)$\}   \\ \hline 
+		\textbf{Universal (Absolute) complement} & $\overline{A}$ & $\{x \notin A\}$\\ \hline
+		\textbf{Cartesian Product} & $A \times B$ & $\{(a, b) \mid   (a \in A) \land (b \in B)  \}$ \\ \hline
+		\textbf{Subset} & $A \subseteq B$ & $(\forall x \in A)[x \in B] $\\ \hline
+		\textbf{Superset} & $A \supseteq B$ & $ B \subseteq A$\\ \hline
+		\textbf{Set equality} & $A = B$ & $(A \subseteq B) \land (B \subseteq A) $ \\ \hline
+		\textbf{Set non-equality} & $A \neq  B$ & $\neg (A =B) $ \\ \hline
+		\textbf{Proper subset} & $A \subset B$ & $ \{ (A \subseteq B) \land (A \neq B) \} $ \\ \hline
+		\textbf{Proper superset} & $A \supset B$ & $ \{ (A \supseteq B) \land (A \neq B) \} $ \\ \hline
+		\textbf{Powerset} & $\Pset{A} $ & $ \{ X \mid X \subseteq A \} $ \\ \hline
+	\end{tabular}
+	\vspace{.1in}
+	\caption{Definitions of Set Theory}
+	\label{tbl:setTheory}
 \end{table}
 
+\subsection*{Number Theory}
 
-\vspace{2in}
-\frontrowcenter{The exam problems begin on the next page.}
+\begin{itemize}
+	\item The set of naturals $\N$ is \textbf{closed} under \textbf{addition} and \textbf{multiplication}.
+	\item The set of integers $\Z$ is \textbf{closed} under \textbf{addition}, \textbf{subtraction} and \textbf{multiplication}.
+	\item $0 \in \N$.
+\end{itemize}
+ 
+
 \pagebreak
 
+\problemhdr{1: Various {\em (10 pts)}} 
 
-\problemhdr{1: Logic  {\em (15 pts)}}
+For every one of the following statements, fill in the circle corresponding to the appropriate choice (\True{} or \False{}).  For example, if any given statement is \True, you should fill in the {\bf first} circle, such that \whitecircle{5pt} becomes \tikz\draw[black,fill=black] (0,0) circle (.85ex); . \textbf{PLEASE DO \underline{NOT} USE CHECKMARKS (\Checkmark),  CROSSES ({\large $\mathlarger \displaystyle \times$}), ETC: FILL-IN THE CIRCLES AS INDICATED ABOVE.} You do {\bf not} need to justify your answers. You may refer to Table \ref{tbl:setTheory} for a list of all axioms of Set Theory that we have learned in the class. 
 
-\questionhdr{(a): Truth tables (7 pts)}
+\begin{table}[H]
+	\renewcommand{\arraystretch}{1.6}
+	\centering
+	{\large 
+	\begin{tabular}{|c|c|c|c|} \hline 
+		& {\bf Statement } & {\bf True} & {\bf False} \\ \hline 
+		(a)& $ \{ 2 \} \in \{2, \{ \{ 2 \} \} \} $ & \whitecircle{5pt} & \whitecircle{5pt} \\ \hline
+		(b)& $\Q^{\leq 0}$ is {\bf countable}. & \whitecircle{5pt} & \whitecircle{5pt} \\ \hline
+		(c)& $f: \R^{\geq 0} \rightarrow \R^{\geq 0}, f(x) = x^{16}$ is a {\bf bijection}.  & \whitecircle{5pt} & \whitecircle{5pt} \\ \hline
+		(d)& $f: \R^{> 0} \rightarrow \R^{> 0}, f(x) = \frac{1}{\vert x \vert }$ is a {\bf bijection}. & \whitecircle{5pt} & \whitecircle{5pt} \\ \hline
+		(e)& $(\exists A)[ \emptyset \in (A - A) ]$ & \whitecircle{5pt} & \whitecircle{5pt} \\ \hline
+		(f)& $(\forall A)[\vert \Pset{A} \vert = \vert A \vert ]$ & \whitecircle{5pt} & \whitecircle{5pt} \\ \hline
+		(g)& $(\forall A)[\vert \Pset{ \{ A \} } \vert ] = 2$ & \whitecircle{5pt} & \whitecircle{5pt} \\ \hline
+		(h)& $ \vert \Pset{\Pset{\{ 1, 2, 3 \} }} \vert = 8 $ & \whitecircle{5pt} & \whitecircle{5pt} \\ \hline
+		(i)& If $a, b \in \Q^{>0}$, then $a^b \in \Q$ & \whitecircle{5pt} & \whitecircle{5pt} \\  \hline
+		(j)& If $a, b \not\in \Q$, then $\frac{a}{b} \notin \Q$ & \whitecircle{5pt} & \whitecircle{5pt} \\  \hline
+	\end{tabular}
+	}
+	\caption*{}
+\end{table} \vspace{-.9in}
+\freespace 
+\pagebreak
 
-{\large  Complete the  following \textbf{truth table} for the logical expression {\Large $(p \lor q) \land (\neg (z \lor q) )$ }. To start you off, we are giving you the first three columns. You can draw and fill as {\bf many columns as you need}, but please be careful to \textbf{not run out of space}. Write {\bf neatly}; if we can't make the difference between a \T{} and an \F{}, we will be forced to take off points! } 
-% \answerspace{QUESTION (a)}
+\notespage
+
+\problemhdr{2: Logic {\em (10 pts)}}
+
+\questionhdr{(a): Truth Tables (5 pts)} \vspace{-.1in}
+
+{\large Complete the  following \textbf{truth table} for the logical expression 
+
+{\Large $$(p \land q) \lor (\neg (z \land q) )$$ } 
+
+To start you off, we are giving you the first three columns. Write {\bf neatly}; if we can't make out the difference between a \T{} and an \F{}, we will be forced to take off points! Also, you should write \T{} and \F{}, {\bf not} \textbf{1} or \textbf{0}. You can use the scrap space available if you want to first fill in the table with \textbf{0}s and \textbf{1}s. } 
 
 \begin{center}
 	\begin{table}[H] 
 		\Large 
 		\setlength{\tabcolsep}{16pt}
-		\renewcommand{\arraystretch}{1.5}
-		\begin{tabular}{|c|c|c|p{5.25in}|} \hline 
-			$p$ & $q$ & $z$ & \\ \hline
-			\F & \F & \F & \\ \hline 		
-			\F & \F & \T & \\ \hline 		
-			\F & \T & \F & \\ \hline 		
-			\F & \T & \T & \\ \hline
-			\T & \F & \F & \\ \hline 		
-			\T & \F & \T & \\ \hline
-			\T & \T & \F & \\ \hline 		
-			\T & \T & \T & \\ \hline												
+%		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{|c|c|c|c|c|c|c| p{5.25in}|} \hline 
+			$p$ & $q$ & $z$ & $p \land q$ & $z \land q$ & $ \neg (z \land q)$ & $(p \land q ) \lor (\neg (z \land q)) $\\ \hline
+			\F & \F & \F & & & &   \\ \hline 		
+			\F & \F & \T & & & & \\ \hline 		
+			\F & \T & \F & & & &  \\ \hline 		
+			\F & \T & \T & & & &\\ \hline
+			\T & \F & \F & & & &\\ \hline 		
+			\T & \F & \T & & & &\\ \hline
+			\T & \T & \F & & & &\\ \hline 		
+			\T & \T & \T & & & &\\ \hline												
 		\end{tabular}
 	\end{table}
-	\vspace{.3in} 
-	\begin{table}[H] 
-		\Large 
-	\renewcommand{\arraystretch}{1.5}
-		\begin{tabular}{|p{\textwidth}|} \hline    \\ \hline	\\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline \\ \hline
-		\end{tabular}
-	\end{table}
-\end{center}
-\pagebreak
-\questionhdr{(b): Negating quantifiers (8 pts)} \vspace{-.1in}
+\end{center} \vspace{-1in}
 
-{\large In the following quantified expressions, push the negation operator ($\neg$) {\bf as far inside the expression as possible.} You do {\bf not} need to show us your steps; if you prefer working in your scrap paper and just showing us your final answer, that is fine; if you prefer to show us all the steps below, that is {\bf also} fine, but \textbf{be careful not to run out of space}. In addition, you do {\bf not} need to care about the truth values of the statements; that is, it is \textbf{not important} whether the statements themselves or their negations are \True{} or \False{}; just push the negation operator as discussed. 
-
-\begin{enumerate}[label=(\roman*)]  
-{\Large 
-  \setlength\itemsep{.3em}	\item $\neg \big (\exists q \in \Q \big ) \big [ q^{2} \in \Q \big ]$  {\em (1 pt)}
-	\item $\neg \big (\forall a \in \Z ) (\exists b \in \Z) \big [ (a + b) \notin \Z \big ]$  {\em (3 pts)}
-	\item $\neg \big (\forall r \in \R \big ) \big [ \big ( (r > 0) \land ( \sqrt{r} \in \N)\big ) \Rightarrow (r \in \N) \big ]$  {\em (4 pts)} }
-\end{enumerate}
-} \vspace{-.4in}
-\answerspace{QUESTION (b)}
-
-\problemhdr{2: Various {\em (2 pts each for 20 pts total)}}
-
-{\large For all of the following statements,  \textbf{circle} \True{} or \False{} depending on whether you believe the statement to be true or false respectively. You do {\bf not} need to justify your answers. Recall that  {\Large $S^c$} is the {\em universal complement} of set {\Large $S$}.  Note that for the questions that involve sets $A, B$, we are asking you to tell us if you believe that the statement is \True{} or \False{} for {\bf all possible sets} $ A$, $ B$.
-} 
-\begin{center}
-	\setlength{\tabcolsep}{40pt}
-	\begin{table}[H]
-		\centering 
-		\large
-		\begin{tabular}{|cc|}    \hline & \\ 
-				{\bf \Large Statement} & {\bf  \Large True or False?} \\ & \\ \hline   & \\ 
-	 					 {\Large $A \cup \emptyset = A$	} & \truefalse  \\ & \\ \hline & \\
-						 {\Large $A \cap A^c \subseteq \emptyset$ 	}& \truefalse \\ & \\ \hline & \\
-						{\Large	$A - B = A \cup B^c$ }& \truefalse \\ & \\ \hline & \\ 	
-				{\Large		  $\lbrace \emptyset \rbrace \cup \lbrace \rbrace  = \lbrace \rbrace$ }& \truefalse \\ & \\ \hline & \\ 
-									{\Large	$\lbrace \lbrace \emptyset \rbrace \rbrace \subseteq \lbrace \lbrace \emptyset, \lbrace \emptyset \rbrace \rbrace \rbrace$ }& \truefalse \\ & \\ \hline & \\ 
-					 The function {\Large $f:\R  \mapsto \R$} defined as: & \ \\ & \\ & \\ {\Large $f(x)=x^3$} & \truefalse  \\ & \\ & \\  is a {\bf bijection}. & \\ & \\ \hline & \\ 
-					 					 The function {\Large $f:\Z \mapsto \R$ } defined as: &  \\ & \\ & \\{\Large $f(x) = \begin{cases} x^2, & x < 0 \\ -x^2, & x \geq 0 \end{cases}\quad $ }& \truefalse  \\ & \\ & \\  is a {\bf bijection}. & \\ & \\ \hline 
-		\end{tabular}
-	\end{table}
-\end{center}	
+\freespace
 
 \pagebreak
 
-\begin{center}
-	\setlength{\tabcolsep}{40pt}
-	\begin{table}[H]
-		\centering 
-		\large
-		\begin{tabular}{|cc|}  \hline & \\ 
+\questionhdr{(b): Logical equivalence (5 pts)}
 
-					The relation  & \\ &  \\ & \\ {\Large $R = \{ (x, y) \in \R \times \R \mid  (x - y)^2 \leq 4 \}$ }& \truefalse  \\ & \\ & \\  is {\em reflexive}, {\em symmetric} {\bf and} {\em transitive}. & \\ & \\ \hline & \\ 
-				The set of positive rationals $\Q^{>0}$   & \\ & \\ 
-					has the same \textbf{cardinality} as & \truefalse \\ & \\
-					the set of integers $\Z$. &  \\ & \\ \hline	& \\ 				 
-					The set {\Large $S = \big \{ f \mid f: \N \mapsto \{0, 1\} \big \} $}& \\ & \\
-					(set of \textbf{all possible functions} from $\N$ \textbf{only to the} & \truefalse  \\ 					&  \\ 
-					 \textbf{two integers} $\mathbf 0$, $ \mathbf 1$) is {\bf un}countable. & \\ & \\ \hline 
+Prove that the following compound logical expression:
+
+{\Large $$ \big (   ( z \lor q  ) \lor   ( z \land \neg q   )  \big ) \land  \big ( z \lor   ( \neg    ( \neg p \land \neg z   )   )  \big )$$ }
+\vspace{-.1in}
+
+is logically equivalent to the expression:
+
+{\Large $$z \lor (q \land p) $$ }
+
+For every derivation you make, write the \textbf{name} of the propositional logic axiom that you are using \textbf{on the right of the derivation.} Refer to Table \ref{tbl:propLogicAxioms} for a list of all propositional logic axioms we have learned in the class.
+
+\answerspacefullpage{QUESTION (b)}
+
+\problemhdr{3: Relations {\em (10 pts)}}
+
+\newcommand{\emptybox}[1]{\framebox(#1,#1){} }
+ 
+For every one of the following relations, fill in the square corresponding to the choices you believe are appropriate for the given relation $A$. For example, if you believe that $A$ \textbf{is} reflexive but \textbf{neither} symmetric {\bf nor} transitive, you should turn the first square from \emptybox{8} into \ $\blacksquare$ \ with your pen or pencil, yet leave the other two ones empty, like so: \emptybox{8}.\ If you believe that the relation doesn't have {\bf any} of the three properties, you should fill  in {\bf the last} box. If you believe that the relation has {\bf all} properties, you should fill in {\bf the first three} boxes. \textbf{PLEASE DO \underline{NOT} USE CHECKMARKS (\Checkmark), CROSSES, \\ ({\large $\mathlarger\times$}), ETC: FILL IN THE SQUARES AS INDICATED ABOVE.} Note that for every relation, you are {\bf given} the sets for which the relation is defined; \textbf{those change from relation to relation}. You do {\bf not} need to justify your answers. 
+
+\begin{table}[H]
+	\centering
+	\setlength\extrarowheight{15pt}
+
+		\hskip-.5cm
+		\begin{tabular}{|c|c|c|c|c|c|} \hline 
+			& {\bf Relation } & {\bf Reflexive} & {\bf Symmetric } & {\bf Transitive } & {\bf None}\\ \hline 
+			(a) & $A \subseteq \R \times \R$ ,  $A = \{ (x, y) \mid x \geq y \}$ & \emptybox{8} & \emptybox{8} & \emptybox{8}  &  \emptybox{8} \\ \hline
+			(b) & $A \subseteq \N^{\geq 1} \times \N^{\geq 1}$ ,  $A= \{ (x, y) \mid x \leq y^2 \}$ & \emptybox{8} & \emptybox{8} & \emptybox{8}  &  \emptybox{8} \\ \hline
+			(c) & $A \subseteq \R \times \R$ ,  $A= \{ (x, y) \mid \vert x - y \vert \geq 1 \}$ & \emptybox{8} & \emptybox{8} & \emptybox{8}  &  \emptybox{8} \\ \hline
+			(d) & $A \subseteq \N^{\geq 2} \times \N^{\geq 2}$,  $A= \{ (x, y) \mid y \equiv 0 \pmod{x} \}$ & \emptybox{8} & \emptybox{8} & \emptybox{8} &  \emptybox{8} \\ \hline
+			(e) & $A \subseteq \R \times \R, A= \{ (x, y) \mid x \geq \floor{y}  \} $ & \emptybox{8} & \emptybox{8} & \emptybox{8} &  \emptybox{8} \\ \hline
 		\end{tabular}
-	\end{table}
-\end{center}	
-
-%%%%% Enumerate-based approach  %%%%%%%%%
-\begin{comment}
-
-	{\Large 
-	
-	\begin{enumerate}[label=(\alph*)]
-		\item $A \cup \emptyset = A$ \tfline
-		\item $A \cap A^c \subseteq \emptyset$\tfline
-		\item $\lbrace \emptyset \rbrace \cup \lbrace \rbrace  = \lbrace \rbrace$ \tfline
-		\item $A - B = A \cup B^c$ \tfline
-		\item $A^c - A = \emptyset$ \tfline
-		\item $(B - C)^c = B^c - C^c$ \tfline
-		\item $\lbrace \lbrace \emptyset \rbrace \rbrace \subseteq \lbrace \lbrace \emptyset, \lbrace \emptyset \rbrace \rbrace \rbrace$ \tfline
-		\item The function $f:\Z \mapsto \R$ defined as $f(x)=x^3$ is a bijection. \tfline
-		\item The function $f: \R \mapsto \R$ defined as $f(x) = \begin{cases} x^2, & x < 0 \\ -x^2, & x \geq 0 \end{cases}\quad $ is a bijection. \tfline
-		\item The relation $R = \{ (x, y) \in \R \times \R \mid  (x - y)^2 \leq 4 \}$ is {\em reflexive}, {\em symmetric} {\bf and} {\em transitive}. \tfline
-	\end{enumerate} \vspace{-.4in}
-
-} 
-
-\end{comment}
-\vspace{-.65in}
-\freespace{PROBLEM 2}
-
-\problemhdr{3: Formal proofs / Number Theory {\em (15 pts)}}
-
-{\large Using {\bf either} a \textbf{direct} {\bf or} an {\bf indirect} proof methodology, prove that the following statements are \True. 
-\begin{enumerate}[label=(\alph*)]
-	\item For any integers {\Large $a,b,c$} with {\Large $a \neq 0$}, if {\Large $(a \vert b)$} \textbf{and} {\Large $(a \vert c)$}, then {\Large $(\forall s, r \in \mathbb{Z})[\ a\ \vert\ (s\cdot b +r \cdot c)\ ]$.} {\em (7 pts)}
-	\item  {\Large $\sqrt 2 + 1$} is {\bf not} divisible by {\Large  $3$ }. You may use the fact  that {\Large $\sqrt2 \notin \Q$} {\bf without proof.} \em (8 pts)
-\end{enumerate}
-} \vspace{-.4in}
-
-\answerspace{PROBLEM 3}
-\additionalanswerspace{PROBLEM 3}
-
-\problemhdr{4: Induction {\em (20 pts)}}
-
-{\large Let $a_n$ be a sequence recursively defined as follows: }
-
-{\Large
-
-\[ a_n = \begin{cases}3, & n = 0 \\ 4, & n = 1 \\ a_{\scriptsize n-1} + a_{\normalsize n-2}\ \   - \ n , & n \geq 2 \end{cases}\]		
-}
-
-{\large Note that, in the recursive case of $a_n$, the quantity $-n$ is {\bf not} an index into a sequence term, like $n-1$ and $n-2$ are! Another way to write the recursive case would be: {\Large \[ -n + a_{n-1} + a_{n-2}\] } }
-
-{\large Using {\bf whichever} mathematical induction principle you consider appropriate, so long as you {\bf sharply delineate} the {\bf Inductive Base}, {\bf Hypothesis} and {\bf Step}, prove that}
-
-{\Large \[ (\forall n \in \N)[a_n = n + 3]\]}
-
- {\large Please write {\bf neatly} in the Inductive Step. If we cannot understand what you are writing, we will {\bf not} be able to give you \textbf{any credit} for the Step!}
- \vspace{-.2in}
+	\caption*{}
+\end{table} \vspace{-.7in}
+\freespace
  
-\answerspace{PROBLEM 4}
-{\additionalanswerspace{PROBLEM 4}
+\notespage
 
-\problemhdr{5: Combinatorics  {\em (25 pts)}}
+\problemhdr{4: Number Theory {\em (20 pts)}}
 
-{\large Answer the following questions on the small line available to you after each and every one of them. You do {\bf not} need to justify your answers. Remember that in combinatorics problems, we do {\bf not} want you to perform messy calculations: Just leave your result in terms of permutation or combination symbols, factorials, powers, sums or products of all of those, etc.
+\questionhdr{(a): Direct Proof (5 pts)}
 
-\vspace{.1in} 
-\begin{enumerate}[label=(\alph*)]
-%		  \setlength\itemsep{1em}
-		\item \doublespacing How many different strings of length $\mathbf 5$, $\mathbf 6$, or $\mathbf 7$ ({\bf five, six} or \textbf{seven}) \\ can we create with the English alphabet? Note that the English \\ alphabet has $\mathbf{26}$ (\textbf{twenty-six}) characters and, of course, characters \\ can be \textbf{repeated}.  For example, there are two `e's in the word ``repeat". \null\hfill \myline{1in} {(\em 1 pt)}
-	\item Calculate the (distinguishable) permutations of the following strings:
-		\begin{enumerate}[label=(\roman*)]
-				  \setlength\itemsep{0.6em}
-			\item {\em iowa } \null\hfill \myline{1in} {\em(1 pt)}
-			\item {\em oregon} \null\hfill \myline{1in} {\em(2 pts)}
-			\item {\em mississippi} \null\hfill \myline{1in} {\em (3 pts)}
-		\end{enumerate}
-		\item A bit-string is a string that contains only $\mathbf{1}$s and $\mathbf{0}$s ({\bf one}s and \\ {\bf zero}es).  How many bit-strings of length $\mathbf{12}$ (\textbf{twelve}) have...
-	\begin{enumerate}[label=(\roman*)]  \setlength\itemsep{0.6em}
-	  	\item \textbf{Exactly} 5 (five) 1s? \null\hfill \myline{1in} {\em (1 pt)}
-		\item \textbf{At most} 5 (five) 1s? \null\hfill \myline{0.9in} { \em (2 pts)}
-		\item \textbf{At least} 5 (five) 1s? \null\hfill \myline{1in} {\em (2 pts)}
-		\item An \textbf{equal number} of 1s and 0s? \null\hfill \myline{1in} {\em (2 pts)}
-	\end{enumerate} \singlespacing
-	\item  Suppose that we have 50 (fifty) students in a classroom. 
-	\begin{enumerate}[label=(\roman*)] 
-		\item  \doublespacing \setlength\itemsep{1.5em}  We want to take a photo of the students. In how many ways  \\ can we order them in a single row? \null\hfill \myline{1in} {\em(1 pt)} 
-		\item  If we want $11$ (eleven) of these students to  sit in a row of $11$ \\  (eleven) seats, in how many ways can we do that? Recall that \\  when 2 (two) or more people are sitting in a row, their {\bf order} \\ 
-matters.  \null\hfill \myline{1in}  {\em (2 pts)}
-		\item  Suppose that $\mathbf{20}$ (\textbf{twenty}) of those students have a first name \\  that begins with a `K'. $\mathbf{10}$ (\textbf{ten}) students have a last name \\ that begins with an `M'.  $\mathbf 5$ (\textbf{five}) students have a first name \\ that starts with a `K' {\bf and} a last name that begins with an `M'. 
-		\vspace{1em}
-		\begin{enumerate}[label=(\roman*)]
-			\item How many students have  {\bf neither} a first name  that \\ begins with a `K' {\bf nor} a last name that begins with  an `M'? \null\hfill \myline{1in} {\em (2 pts)} 
-			\item How many different {\bf pairs} of students have {\bf neither} \\  first name  that  begins with a `K' {\bf nor} a last name \\ that begins with an `M'? \null\hfill \myline{1in} {\em (1 pt)} 
-	\end{enumerate}	
-		\item Suppose that a university department contains $\mathbf{10}$ (\textbf{ten}) men \\ and $\mathbf{15}$ (\textbf{fifteen}) women. How many ways are there to form a  \\ committee with $\mathbf{6}$ (\textbf{six}) members if: \vspace{1em}
-		\begin{enumerate}[label=(\roman*)] \setlength\itemsep{1.5em} 
-			\item It must have \emph{the same} number of men and women? \null\hfill \myline{1in} {(\em 1 pt)}
-			\item \doublespacing It must have \emph{more} women than men?  Please note that \\ $\mathbf 0$ \textbf{(zero)} men and a  \textbf{non-zero} number of women \textbf{still} \\ means that there are \textbf{more women than men} in the \\ committee!   \null\hfill \myline{1in}  {\em (2 pts)}
-		\end{enumerate}		
-	\item  \doublespacing Suppose that we have a basket with 4 (four) different kinds \\  of apples: 8 (eight) Braeburn, 2 (two) Fuji, 4 (four) Elstar \\ and 6 (six) Gala. We {\bf randomly} pick 4 (four) apples from \\ the basket. What is the {\bf probability} that the apples picked \\ will all be of  \textbf{a different} \textbf{kind}? \null\hfill \myline{1in}  {(\em 2 pts)}
-\end{enumerate} 
-		\end{enumerate}
- \vspace{-.5in}
- 
- \pagebreak
+Prove {\bf directly} that, if $q \in \Q$, $q-1 \in \Q$.
 
-\problemhdr{6: Show me what you got {\em (5 pts)}}
+\vspace{-.3in} 
 
-{\large Suppose that $n$ and $m$ are natural numbers. Using {\bf whichever} mathematical induction principle you consider appropriate, so long as you {\bf sharply delineate} the {\bf Inductive Base}, {\bf Hypothesis} and {\bf Step}, prove that  }
+\answerspacefullpage{QUESTION (a)}
 
-{\Large $$\Sum_{i=0}^{n}  \binom{m + i - 1}{i} = \binom{m + n}{n}$$ } 
+\questionhdr{(b): Indirect Proof I (5 pts)} 
 
-{\large 
-Hints: 
-\begin{itemize} 
-	\item Your induction should be on $\mathbf n$.
-	\item When solving the inductive step:
-	\begin{itemize}
-		\item  \textbf{Keep in mind the answer that you want}.  This will give you a clue on how to manipulate the expression to reach it.
-		\item If you want to use combinatorial identities that we have talked about in class, \textbf{you are absolutely allowed to do so}. However, please make sure you \textbf{explicitly state  which identity you are using} so that we can understand what you are doing during grading.
-\end{itemize}	
-	
+Suppose that $a \in \Z$. Using an {\em indirect} proof methodology, prove that, if $a^3 \equiv 0 \pmod{5}$, then $a \equiv 0 \pmod{5}$. \vspace{-.3in}
+
+\answerspacefullpage{QUESTION (b)}
+
+\questionhdr{(c): Indirect Proof  II (10 pts)} 
+
+Using an {\em indirect} proof methodology as well as the theorem of question (b), prove that $\sqrt[3]{5} \notin \Q$. You should take the theorem of question (b) {\bf as a given, whether you were able to prove it or not.} \vspace{-.3in}
+
+\answerspacefullpage{QUESTION (c)}
+
+\notespage
+
+
+
+\problemhdr{5: Induction {\em (20 pts)} }
+
+\questionhdr{(a): Strong (5 pts)}
+
+Let $a_n$ be a sequence recursively defined as follows:
+
+
+{\Large $$a_n = \begin{cases}6, & n = 0 \\ 8, & n = 1 \\ -2n + a_{\tiny n-1} + a_{\tiny n-2}, & n \geq 2 \end{cases}$$ }
+
+Using {\bf strong induction}, show that 
+
+{\Large $$(\forall n\ge 0)[a_n = 2n+6]$$ }
+
+\vspace{-.2in}
+\standardinductionspace
+
+\pagebreak
+
+\questionhdr{(b): Structural on binary trees (7 pts)}
+
+We recursively define a {\bf perfect binary tree} of height $h$, as follows:
+
+\begin{itemize}
+	\item A single node called the tree's \textbf{root}, if $h=0$, or 
+	\item A root node pointing to \textbf{two} \textbf{perfect} binary trees of height $h-1$, if $h>0$.
 \end{itemize}
 
- {\large Please write {\bf neatly} in the Inductive Step. If we cannot understand what you are writing, we will {\bf not} be able to give you \textbf{any credit} for the Step!}
 
-}
-\vspace{-.3in}
-\answerspace{PROBLEM 6}
-\additionalanswerspace{PROBLEM 6}
+Let $V$ be the number of nodes and $E$ the number of edges in a perfect binary tree.  Use structural induction to prove that $E=V - 1$.  \textit{Hint: Induct on the height of the tree.}
 
-\problemhdr{7:  General Trivia {\em (1 pt extra credit)}}
+\standardinductionspace
 
-{\large In the legendary real-time-strategy video game {\em Age of Empires II: The Age of Kings} (as well as \\ \ \\  its various expansion packs), what does the cheat code {\tt howdoyouturnthison} accomplish?}  \myline{.87 in} \\ \ \\ \myline{\textwidth}
+\questionhdr{(c): Structural on $k$-ary trees (8 pts)}
 
-\pagebreak
+A {\bf perfect tree} (not perfect {\bf binary} tree!) of height $h$ is either
 
+\begin{itemize}
+	\item A single node called the tree's \textbf{root}, if $h=0$, or 
+	\item A root node that points to the roots of \textbf{one} or \textbf{more} perfect trees, each of height $h - 1$, if $h>0$.
+\end{itemize}
+
+Let $V$ be the number of nodes and $E$ the number of edges in a perfect tree.  Use structural induction to prove that $E=V - 1$.  \textit{Hint: Induct on the height of the tree.}
+
+\standardinductionspace
+
+\problemhdr{6: Combinatorics / Probability {\em (20 pts)}}
+
+\newcommand{\lineitem}[1]{\item #1 \null \hfill \myline{1in}}
+
+Answer the following questions on the line available to you after each and 
+every one of them. Your answer should be in terms of {\bf factorials}, {\bf permutation / combination symbols} or {\bf ratios} of the aforementioned quantities. Do {\bf not} simplify any ratios: for example, if you end up with a result of form $\nicefrac{4!}{2!}$, leave it {\bf exactly as is}; do {\bf not} simplify the ratio to $6$.
+
+\begin{enumerate}[label=(\alph*)]
+\doublespacing
+	\item The {\bf Greek alphabet} has \textbf{24 (twenty-four)} characters, of which \textbf{7 (seven)} \\ are vowels, and \textbf{17 (seventeen) } are consonants. How many strings of length \\ 
+$\mathbf{13}$ \textbf{ (thirteen)} can we construct from this alphabet...
+		\begin{enumerate}[label=(\roman*)]
+			\lineitem {If we {\bf CAN reuse} the same characters (WITH replacement)?}
+			\lineitem {If we {\bf CANNOT reuse} the same characters (WITHOUT replacement)?}
+			\lineitem {If we want {\bf exactly} three vowels, and we \textbf{CAN} re-use characters? }
+			\lineitem {If we want {\bf exactly} three vowels, and we \textbf{CANNOT} re-use characters? }
+		\end{enumerate}
+
+		\item The {\bf octal} numbering system uses the digits $0$, $1$, $2$, $3$, $4$, $5$, $6$, $7$ to build  \\ ``octal strings". How many octal strings of length $10$ (ten) contain:
+	\begin{enumerate}[label=(\roman*)] 
+		\setlength\itemsep{0.6em}
+	  	\lineitem{ \textbf{Exactly}  three \textbf{6}s?    }
+ 		\lineitem{ \textbf{At most}  three \textbf{6}s?    }
+		\lineitem{ \textbf{Exactly}  three \textbf{6}s and {\bf exactly} four \textbf{5}s?    }
+	\end{enumerate} 
+	\item A standard deck of cards has $\mathbf{52}$ \textbf{(fifty-two)} cards, which are divided into \\ \textbf{4 (four)} \textbf{suits}:\textbf{ clubs, diamonds, spades and hearts}. Every suit is \\  subdivided into \textbf{13 (thirteen)} \textbf{ranks}: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, \\  Queen, King. The Jack, Queen and King of {\bf all four suits} are also called \\ {\em face} cards. A ``hand" is just a set of $n\geq 1$ cards. Order {\bf never matters} \\ in hands. For example, A\spd{} 7\spd{}  4\clb{} and 7\spd{} A\spd{} 4\clb{} are the \textbf{same 3} \\ \textbf{ (three) - card hand}.
+	\begin{enumerate}[label=(\roman*)]
+		\lineitem{How many \textbf{6 (SIX)} - card hands are there?}
+		\lineitem{How many \textbf{6 (SIX)} - card hands of {\bf only face cards} are there?}
+		\lineitem{How many \textbf{6 (SIX)} - card hands contain {\bf all 4 (four) Aces}?}
+		\lineitem{How many \textbf{4 (FOUR)} - card hands contain {\bf all 4 (four) Aces}?}
+		\lineitem{How many \textbf{6 (SIX)} - card hands {\bf do not} contain {\bf any} face \\ cards? }
+	\end{enumerate}
+	\item Suppose that we have a group of people from \textbf{4 (four)} different countries: \\ \textbf{8 (eight)} from the USA, \textbf{2 (two)} from Egypt, \textbf{4 (four)} from Greece \\ and \textbf{6 (six)} from Israel. We are interesting in creating committees from \\ all of these people. In committees, order of the people in the committee \\ does {\bf NOT} matter.
+	\begin{enumerate}[label=(\roman*)]
+		\lineitem {How many \textbf{4 (four)}-person committees can we make from this group of \\ people? }
+		\lineitem {How many \textbf{4 (four)}-person committees can we make from this group \\ of people if we want every person to be \textbf{from a different country?} }
+		\lineitem {What is  the \textbf{probability} that a \textbf{4 (four)}-person committee, chosen at \\ random from this group of people consists of people from {\bf 4 (four)} \\ different countries?} 
+	 \end{enumerate}	
+\end{enumerate}
+ \vspace{-.5in}
  
-\Repeat{2}{\notespage}
+\freespace
+
+\problemhdr{7: Show me what you got {\em (10 pts)}}
+
+Suppose that $T_n$ is a sequence recursively defined as follows:
+
+{\Large $$T_n = \begin{cases}0, & n = 0 \\ 5, & n = 1 \\ T_{\floor{\nicefrac{n}{6}}} + T_{\floor{\nicefrac{2n}{3}}} + 3n, & n \geq 2 \end{cases}$$ }
+
+
+Using {\bf Constructive STRONG induction}, find the {\bf smallest possible} constant $c \in \R^{>0}$ such that: 
+
+{\Large $$(\forall n \in \N)[T_n \leq c  n]$$ }
+\vspace{-.2in}
+\standardinductionspace
+
+\notespage
+
+
 \end{document}

@@ -1,6 +1,6 @@
 # README
 
-The purpose of this repo is to help me with the management of my various *LaTeX*-formatted assignments for CS UMD students.
+This repo provides a *LaTeX* template that I have been maintaining to format my UMD assignments.
 
 ## CONTENTS
 
@@ -8,7 +8,7 @@ The purpose of this repo is to help me with the management of my various *LaTeX*
 
 - `include/mymath.tex` contains many macros useful for courses such as *CMSC250, Discrete Mathematics*. Those macros help with the formatting of quantifiers, negations, as well as the size of symbols and formatting of formulae.
 
-- `include/code.tex` contains a specific configuration of the package [`lstlistings`](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings), which is a great package for formatting source code in *LaTeX*. I am likely to use this in coding-heavy courses such as *CMSC420, Data Structures*.
+- `include/code.tex` contains a specific configuration of the package [`lstlistings`](https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings), which is a great package for formatting source code in *LaTeX*. Useful  in coding-heavy courses such as *CMSC420, Data Structures*.
 
 `img/`: A project-specific directory with image files in various common formats (`png`, `gif`, `jpg`, ...).
 
@@ -20,7 +20,7 @@ The purpose of this repo is to help me with the management of my various *LaTeX*
 
 `*.{tex,pdf}` (optional): If present, those are:
 
-- *tex* source of an example document that uses the contents of the `include/` and `img/` directories.
+- *tex* source of an example document produced by this template.
 - The **pdf** that is compiled when running `pdflatex` on the aforementioned *tex* source.
 
 
