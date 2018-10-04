@@ -17,25 +17,21 @@
 
 
 %%%%%%%%%%%%%  IMPORT MACRO FILES AS NEEDED %%%%%%%%%%%
-\input{include/mymath}
-% \input{include/code} % This is useful for assignments in CMSC420, 132, etc
-\input{include/formatting}
-\input{include/emphasis}
-\input{include/cool}
-\input{include/databox} % Edit this file for variable problem numbers in grading box
- \input{include/cards}
+\input{../../template/packageimports}
+\input{../../template/mymath}
+% \input{../../template/code} % This is useful for assignments in CMSC420, 132, etc
+\input{../../template/formatting}
+\input{../../template/emphasis}
+\input{../../template/cool}
+\input{../../template/examdata} % Edit this file for variable problem numbers in grading box
+ \input{../../template/cards}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{tikz}
-\newcommand{\tikzcircle}[2][red,fill=red]{\tikz[baseline=-0.5ex]\draw[#1,radius=#2] (0,0) circle ;}%
-\newcommand{\whitecircle}[1]{\tikz[baseline=-0.5ex]\draw[black, radius=#1] (0,0) circle ;}
-
 
 \begin{document}
 
 
 % Box at the top of every first page.
-\databox{CMSC250, Spring 2018}{all}{Final Exam}{Tuesday, 05-15-2018}{04:05pm-06:00pm}
+\examdata{CMSC250, Spring 2018}{all}{Final Exam}{Tuesday, 05-15-2018}{04:05pm-06:00pm}
 
 \vspace{-.3in}
 
@@ -125,9 +121,9 @@ The following are Set Theoretic notation and definitions.
 
 \pagebreak
 
-\problemhdr{1: Various {\em (10 pts)}} 
+\problem{Various}{10}
 
-For every one of the following statements, fill in the circle corresponding to the appropriate choice (\True{} or \False{}).  For example, if any given statement is \True, you should fill in the {\bf first} circle, such that \whitecircle{5pt} becomes \tikz\draw[black,fill=black] (0,0) circle (.85ex); . \textbf{PLEASE DO \underline{NOT} USE CHECKMARKS (\Checkmark),  CROSSES ({\large $\mathlarger \displaystyle \times$}), ETC: FILL-IN THE CIRCLES AS INDICATED ABOVE.} You do {\bf not} need to justify your answers. You may refer to Table \ref{tbl:setTheory} for a list of all axioms of Set Theory that we have learned in the class. 
+{\large For every one of the following statements, fill in the circle corresponding to the appropriate choice (\True{} or \False{}).  For example, if any given statement is \True, you should fill in the {\bf first} circle, such that \whitecircle{5pt} becomes \tikz\draw[black,fill=black] (0,0) circle (.85ex); . \textbf{PLEASE DO \underline{NOT} USE CHECKMARKS (\Checkmark),  CROSSES ({\large $\mathlarger \displaystyle \times$}), ETC: FILL-IN THE CIRCLES AS INDICATED ABOVE.} You do {\bf not} need to justify your answers. You may refer to Table \ref{tbl:setTheory} for a list of all axioms of Set Theory that we have learned in the class. }
 
 \begin{table}[H]
 	\renewcommand{\arraystretch}{1.6}
@@ -148,21 +144,22 @@ For every one of the following statements, fill in the circle corresponding to t
 	\end{tabular}
 	}
 	\caption*{}
-\end{table} \vspace{-.9in}
+\end{table} \vspace{-.4in}
 \freespace 
 \pagebreak
 
 \notespage
 
-\problemhdr{2: Logic {\em (10 pts)}}
+\problem{Logic}{10}
 
-\questionhdr{(a): Truth Tables (5 pts)} \vspace{-.1in}
 
-{\large Complete the  following \textbf{truth table} for the logical expression 
+\question{Truth Tables}{5}
+
+{\large Complete the  following \textbf{truth table} for the logical expression }
 
 {\Large $$(p \land q) \lor (\neg (z \land q) )$$ } 
 
-To start you off, we are giving you the first three columns. Write {\bf neatly}; if we can't make out the difference between a \T{} and an \F{}, we will be forced to take off points! Also, you should write \T{} and \F{}, {\bf not} \textbf{1} or \textbf{0}. You can use the scrap space available if you want to first fill in the table with \textbf{0}s and \textbf{1}s. } 
+{\large To start you off, we are giving you the first three columns. Write {\bf neatly}; if we can't make out the difference between a \T{} and an \F{}, we will be forced to take off points! Also, you should write \T{} and \F{}, {\bf not} \textbf{1} or \textbf{0}. You can use the scrap space available if you want to first fill in the table with \textbf{0}s and \textbf{1}s. } 
 
 \begin{center}
 	\begin{table}[H] 
@@ -181,32 +178,33 @@ To start you off, we are giving you the first three columns. Write {\bf neatly};
 			\T & \T & \T & & & &\\ \hline												
 		\end{tabular}
 	\end{table}
-\end{center} \vspace{-1in}
+\end{center} \vspace{-.7in}
 
 \freespace
 
 \pagebreak
 
-\questionhdr{(b): Logical equivalence (5 pts)}
+\question{Logical equivalence}{5}
 
-Prove that the following compound logical expression:
+
+{\large Prove that the following compound logical expression: }
 
 {\Large $$ \big (   ( z \lor q  ) \lor   ( z \land \neg q   )  \big ) \land  \big ( z \lor   ( \neg    ( \neg p \land \neg z   )   )  \big )$$ }
 \vspace{-.1in}
 
-is logically equivalent to the expression:
+{\large is logically equivalent to the expression: } 
 
 {\Large $$z \lor (q \land p) $$ }
 
-For every derivation you make, write the \textbf{name} of the propositional logic axiom that you are using \textbf{on the right of the derivation.} Refer to Table \ref{tbl:propLogicAxioms} for a list of all propositional logic axioms we have learned in the class.
+{\large For every derivation you make, write the \textbf{name} of the propositional logic axiom that you are using \textbf{on the right of the derivation.} Refer to Table \ref{tbl:propLogicAxioms} for a list of all propositional logic axioms we have learned in the class. }
+\answerspacefullpage
 
-\answerspacefullpage{QUESTION (b)}
+\problem{Relations}{10}
 
-\problemhdr{3: Relations {\em (10 pts)}}
 
 \newcommand{\emptybox}[1]{\framebox(#1,#1){} }
  
-For every one of the following relations, fill in the square corresponding to the choices you believe are appropriate for the given relation $A$. For example, if you believe that $A$ \textbf{is} reflexive but \textbf{neither} symmetric {\bf nor} transitive, you should turn the first square from \emptybox{8} into \ $\blacksquare$ \ with your pen or pencil, yet leave the other two ones empty, like so: \emptybox{8}.\ If you believe that the relation doesn't have {\bf any} of the three properties, you should fill  in {\bf the last} box. If you believe that the relation has {\bf all} properties, you should fill in {\bf the first three} boxes. \textbf{PLEASE DO \underline{NOT} USE CHECKMARKS (\Checkmark), CROSSES, \\ ({\large $\mathlarger\times$}), ETC: FILL IN THE SQUARES AS INDICATED ABOVE.} Note that for every relation, you are {\bf given} the sets for which the relation is defined; \textbf{those change from relation to relation}. You do {\bf not} need to justify your answers. 
+{\large For every one of the following relations, fill in the square corresponding to the choices you believe are appropriate for the given relation $A$. For example, if you believe that $A$ \textbf{is} reflexive but \textbf{neither} symmetric {\bf nor} transitive, you should turn the first square from \emptybox{8} into \ $\blacksquare$ \ with your pen or pencil, yet leave the other two ones empty, like so: \emptybox{8}.\ If you believe that the relation doesn't have {\bf any} of the three properties, you should fill  in {\bf the last} box. If you believe that the relation has {\bf all} properties, you should fill in {\bf the first three} boxes. \textbf{PLEASE DO \underline{NOT} USE CHECKMARKS (\Checkmark), CROSSES, ({\large $\mathlarger\times$}), ETC: FILL IN THE SQUARES AS INDICATED ABOVE.} Note that for every relation, you are {\bf given} the sets for which the relation is defined; \textbf{those change from relation to relation}. You do {\bf not} need to justify your answers.  }
 
 \begin{table}[H]
 	\centering
@@ -222,47 +220,43 @@ For every one of the following relations, fill in the square corresponding to th
 			(e) & $A \subseteq \R \times \R, A= \{ (x, y) \mid x \geq \floor{y}  \} $ & \emptybox{8} & \emptybox{8} & \emptybox{8} &  \emptybox{8} \\ \hline
 		\end{tabular}
 	\caption*{}
-\end{table} \vspace{-.7in}
+\end{table} \vspace{-.3in}
 \freespace
  
 \notespage
 
-\problemhdr{4: Number Theory {\em (20 pts)}}
+\problem{Number Theory}{20} 
 
-\questionhdr{(a): Direct Proof (5 pts)}
+\question{Direct Proof}{5}
 
-Prove {\bf directly} that, if $q \in \Q$, $q-1 \in \Q$.
+{\large Prove {\bf directly} that, if $q \in \Q$, $q-1 \in \Q$. }
 
-\vspace{-.3in} 
+\answerspacefullpage
 
-\answerspacefullpage{QUESTION (a)}
+\question{Indirect Proof I}{5}
 
-\questionhdr{(b): Indirect Proof I (5 pts)} 
+{\large Suppose that $a \in \Z$. Using an {\em indirect} proof methodology, prove that, if $a^3 \equiv 0 \pmod{5}$, then $a \equiv 0 \pmod{5}$. }  
 
-Suppose that $a \in \Z$. Using an {\em indirect} proof methodology, prove that, if $a^3 \equiv 0 \pmod{5}$, then $a \equiv 0 \pmod{5}$. \vspace{-.3in}
+\answerspacefullpage
 
-\answerspacefullpage{QUESTION (b)}
+\question{Indirect Proof II}{10}
 
-\questionhdr{(c): Indirect Proof  II (10 pts)} 
+{\large Using an {\em indirect} proof methodology as well as the theorem of question (b), prove that $\sqrt[3]{5} \notin \Q$. You should take the theorem of question (b) {\bf as a given, whether you were able to prove it or not.} }
 
-Using an {\em indirect} proof methodology as well as the theorem of question (b), prove that $\sqrt[3]{5} \notin \Q$. You should take the theorem of question (b) {\bf as a given, whether you were able to prove it or not.} \vspace{-.3in}
-
-\answerspacefullpage{QUESTION (c)}
+\answerspacefullpage
 
 \notespage
 
+\problem{Induction}{20}
 
+\question{Strong}{5}
 
-\problemhdr{5: Induction {\em (20 pts)} }
-
-\questionhdr{(a): Strong (5 pts)}
-
-Let $a_n$ be a sequence recursively defined as follows:
+{\large Let $a_n$ be a sequence recursively defined as follows: }
 
 
 {\Large $$a_n = \begin{cases}6, & n = 0 \\ 8, & n = 1 \\ -2n + a_{\tiny n-1} + a_{\tiny n-2}, & n \geq 2 \end{cases}$$ }
 
-Using {\bf strong induction}, show that 
+{\large Using {\bf strong induction}, show that }
 
 {\Large $$(\forall n\ge 0)[a_n = 2n+6]$$ }
 
@@ -271,9 +265,9 @@ Using {\bf strong induction}, show that
 
 \pagebreak
 
-\questionhdr{(b): Structural on binary trees (7 pts)}
+\question{Structural on binary trees}{7}
 
-We recursively define a {\bf perfect binary tree} of height $h$, as follows:
+{\large We recursively define a {\bf perfect binary tree} of height $h$, as follows:
 
 \begin{itemize}
 	\item A single node called the tree's \textbf{root}, if $h=0$, or 
@@ -283,11 +277,12 @@ We recursively define a {\bf perfect binary tree} of height $h$, as follows:
 
 Let $V$ be the number of nodes and $E$ the number of edges in a perfect binary tree.  Use structural induction to prove that $E=V - 1$.  \textit{Hint: Induct on the height of the tree.}
 
+} 
 \standardinductionspace
 
-\questionhdr{(c): Structural on $k$-ary trees (8 pts)}
+\question{Structural on $k$-ary trees}{8}
 
-A {\bf perfect tree} (not perfect {\bf binary} tree!) of height $h$ is either
+{\large A {\bf perfect tree} (not perfect {\bf binary} tree!) of height $h$ is either
 
 \begin{itemize}
 	\item A single node called the tree's \textbf{root}, if $h=0$, or 
@@ -295,16 +290,14 @@ A {\bf perfect tree} (not perfect {\bf binary} tree!) of height $h$ is either
 \end{itemize}
 
 Let $V$ be the number of nodes and $E$ the number of edges in a perfect tree.  Use structural induction to prove that $E=V - 1$.  \textit{Hint: Induct on the height of the tree.}
-
+}
 \standardinductionspace
 
-\problemhdr{6: Combinatorics / Probability {\em (20 pts)}}
+\problem{Combinatorics / Probability}{20}
 
-\newcommand{\lineitem}[1]{\item #1 \null \hfill \myline{1in}}
-
-Answer the following questions on the line available to you after each and 
+{\large Answer the following questions on the line available to you after each and 
 every one of them. Your answer should be in terms of {\bf factorials}, {\bf permutation / combination symbols} or {\bf ratios} of the aforementioned quantities. Do {\bf not} simplify any ratios: for example, if you end up with a result of form $\nicefrac{4!}{2!}$, leave it {\bf exactly as is}; do {\bf not} simplify the ratio to $6$.
-
+}
 \begin{enumerate}[label=(\alph*)]
 \doublespacing
 	\item The {\bf Greek alphabet} has \textbf{24 (twenty-four)} characters, of which \textbf{7 (seven)} \\ are vowels, and \textbf{17 (seventeen) } are consonants. How many strings of length \\ 
@@ -338,21 +331,20 @@ $\mathbf{13}$ \textbf{ (thirteen)} can we construct from this alphabet...
 		\lineitem {What is  the \textbf{probability} that a \textbf{4 (four)}-person committee, chosen at \\ random from this group of people consists of people from {\bf 4 (four)} \\ different countries?} 
 	 \end{enumerate}	
 \end{enumerate}
- \vspace{-.5in}
+ 
  
 \freespace
 
-\problemhdr{7: Show me what you got {\em (10 pts)}}
+\problem{Show me what you got}{10}
 
-Suppose that $T_n$ is a sequence recursively defined as follows:
+{\large Suppose that $\mathlarger{T_n}$ is a sequence recursively defined as follows: }
 
 {\Large $$T_n = \begin{cases}0, & n = 0 \\ 5, & n = 1 \\ T_{\floor{\nicefrac{n}{6}}} + T_{\floor{\nicefrac{2n}{3}}} + 3n, & n \geq 2 \end{cases}$$ }
 
-
-Using {\bf Constructive STRONG induction}, find the {\bf smallest possible} constant $c \in \R^{>0}$ such that: 
+{\large Using {\bf Constructive STRONG induction}, find the {\bf smallest possible} constant $\mathlarger{c \in \R^{>0}}$ such that:  }
 
 {\Large $$(\forall n \in \N)[T_n \leq c  n]$$ }
-\vspace{-.2in}
+ 
 \standardinductionspace
 
 \notespage

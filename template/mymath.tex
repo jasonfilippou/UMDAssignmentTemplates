@@ -1,0 +1,253 @@
+% Basic math
+%\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,amssymb,amsthm}
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+%\usepackage{array, nicefrac, mathtools}
+
+% Theorems, definitions, equations, lemmas
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defn}{Definition}
+\newtheorem{rem}[thm]{Remark}
+\numberwithin{equation}{section}
+\newtheorem*{defn*}{Definition} % Theorem environments with no numbering
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{thm*}{Theorem}
+
+% For negation and quantifiers in Discrete Math
+\newcommand{\shortsim}{\raise.17ex\hbox{$\scriptstyle \sim$}}
+\renewcommand{\neg}{\shortsim}
+\renewcommand{\nexists}{\neg\exists}
+\newcommand{\nequiv}{\ensuremath{\not\equiv}}
+
+% Some larger symbols for clarity.
+\newcommand{\Sum}{\ensuremath{\mathlarger{\sum}}}
+\newcommand{\Prod}{\ensuremath{\mathlarger{\prod}}}
+\newcommand{\Ell}{\ensuremath{\mathcal{L}}}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+%Some number sets
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Nplus}{\ensuremath{\mathbb{N}^+}}
+\newcommand{\Nstar}{\ensuremath{\mathbb{N}^*}} % pretty much equivalent to Nplus
+\newcommand{\Neven}{\ensuremath{\mathbb{N}^\text{even}}}
+\newcommand{\Nstareven}{\ensuremath{\mathbb{N}^*_\text{even}}}
+\newcommand{\Nodd}{\ensuremath{\mathbb{N}^\text{odd}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Zstar}{\ensuremath{\mathbb{Z}^*}}
+\newcommand{\Zstareven}{\ensuremath{\mathbb{Z}^*_\text{even}}}
+\newcommand{\Zplus}{\ensuremath{\mathbb{Z}^+}}
+\newcommand{\Zminus}{\ensuremath{\mathbb{Z}^-}}
+\newcommand{\Zeven}{\ensuremath{\mathbb{Z}^\text{even}}}
+\newcommand{\Zodd}{\ensuremath{\mathbb{Z}^\text{odd}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Qplus}{\ensuremath{\mathbb{Q}^+}}
+\newcommand{\Qstar}{\ensuremath{\mathbb{Q}^*}}
+\newcommand{\Qminus}{\ensuremath{\mathbb{Q}^-}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\Rminus}{\ensuremath{\mathbb{R}^-}}
+\newcommand{\Rplus}{\ensuremath{\mathbb{R}^+}}
+\newcommand{\Rstar}{\ensuremath{\mathbb{R}^*}}
+\newcommand{\I}{\ensuremath{\mathbb{R - Q}}}
+\renewcommand{\P}{\ensuremath{\mathbf{P}}}
+\newcommand{\Pset}[1]{\ensuremath{\mathcal{P}(#1)}}
+
+% An explained mathematical derivation in the form of an unbulleted list item.
+\newcommand{\derivitem}[2]{\item[] $=#1 \qquad \qquad $ \derivexpl{#2}}
+\newcommand{\derivitemnte}[2]{\item[] $#1 \qquad \qquad $ \derivexpl{#2}}
+\newcommand{\derivitemized}[2]{\item $=#1 \qquad \qquad $ \derivexpl{#2}}
+\newcommand{\derivitemizednte}[2]{\item $#1 \qquad \qquad $ \derivexpl{#2}}
+
+% Math and lines.
+\newcommand{\mathitem}[1]{\item $#1$ \hrulefill}
+
+% Induction-related
+\newcommand{\indstart}[1]{Let $P($#1$)$ be the proposition we are attempting to prove true. We proceed via mathematical induction on #1.}
+\newcommand{\IB}{\textbf{Inductive Base: }}
+\newcommand{\IH}{\textbf{Inductive Hypothesis: }}
+\newcommand{\IS}{\textbf{Inductive Step: }}
+\newcommand{\derivexpl}[1]{\text{ \emph { (#1) } } \\ } % Textual explanation of line-by-line derivations
+
+% Interesting mathematical notation and symbols
+
+\newcommand{\bigoh}[1]{$\mathcal O$(#1)}
+\newcommand{\bigtheta}[1]{$\mathit{\Theta}$(#1)}
+\newcommand{\bigomega}[1]{$\mathit{\Omega}$(#1)}
+
+% For logical rules of inference
+
+\newcommand{\rulesofinference}[2]{
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{|c|c|p{2.5cm}|p{2.5cm}|}\hline
+			\centering
+			\textbf{Modus Ponens} & \textbf{Modus Tollens} & \textbf{Disjunctive addition} & \textbf{Conjunctive addition} \\ \hline
+				$\begin{aligned}
+			p  \\
+			p \Rightarrow q \\
+			\therefore q
+		\end{aligned}$ & 
+		 $\begin{aligned}
+			\neg q  \\
+			p \Rightarrow q \\
+			\therefore \neg p
+		\end{aligned}$ & 
+		 $\begin{aligned}
+			p  \\
+			\therefore p \lor q
+		\end{aligned}$ &
+		$\begin{aligned}
+			p, q \\
+			\therefore p \land q
+		\end{aligned}$ \\ \hline 
+			 \textbf{Conjunctive Simplification} & \textbf{Disjunctive syllogism} & \textbf{Hypothetical syllogism} &  \textbf{Resolution}  \\ \hline
+			 $\begin{aligned}
+			p \land q \\
+			\therefore p, q
+		\end{aligned}$ 	& 
+			$\begin{aligned}
+			p \lor q \\
+			\neg p \\
+			\therefore q
+		\end{aligned}$ &
+		$\begin{aligned}
+			p  \Rightarrow q \\
+			q \Rightarrow r \\
+			\therefore p \Rightarrow r
+		\end{aligned}$ &  
+		$\begin{aligned}
+		p \lor q\\
+		(\neg q) \lor z\\
+		\therefore p \lor z
+		\end{aligned}$ \\ \hline
+		\end{tabular}
+		\caption{#1}
+		\label{#2}
+	\end{table}
+}
+
+\newcommand{\logicalequivs}[2]{
+
+	\begin{table}[H]
+		\centering
+		\renewcommand*{\arraystretch}{1.2}
+		\begin{tabular}{|>{\centering\arraybackslash}p{2.5in} | c | c |} \hline
+			\textbf{Commutativity of binary operators} & $p \land q \equiv q \land p$ & $p \lor q \equiv q \lor p$ \\ \hline
+		\textbf{Associativity of binary operators} & $(p \land q) \land r \equiv p \land (q \land r)$ &  $(p \lor q) \lor r \equiv p \lor (q \lor r)$ \\ \hline
+		\textbf{Distributivity of binary operators} & $p \land (q \lor r) \equiv (p \land q) \lor (p \land r)$ & $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ \\ \hline
+		\textbf{Identity laws} & $p \land T \equiv p$ & $p \lor F \equiv p$ \\ \hline
+		\textbf{Negation laws} & $p \lor (\neg p) \equiv T$ & $p \land (\neg p) \equiv F$ \\ \hline
+		\textbf{Double negation} & \multicolumn{2}{c|}{$\neg (\neg p) \equiv p$}  \\ \hline 
+		\textbf{Idempotence} & $p \land p \equiv p$ & $p \lor p \equiv p$ \\ \hline
+		\textbf{De Morgan's axioms} & $\neg (p \land q) \equiv (\neg p )\lor (\neg q)$ & $\neg (p \lor q) \equiv (\neg p) \land (\neg q)$\\ \hline
+		\textbf{Universal bound laws} & $p \lor T \equiv T$ & $p \land F \equiv F$ \\ \hline
+		\textbf{Absorption laws} & $p \lor (p \land q) \equiv p$ & $p \land (p \lor q) \equiv p$ \\ \hline
+		\textbf{Negations of contradictions / tautologies} & $\neg F \equiv T$ & $\neg T \equiv F$ \\ \hline
+		\textbf{Contrapositive} & \multicolumn{2}{c|}{$(a \Rightarrow b) \equiv (( \neg b) \Rightarrow (\neg a))$} \\ \hline
+		\textbf{Equivalence between biconditional and implication} & \multicolumn{2}{c|}{$a \Leftrightarrow b \equiv (a \Rightarrow b) \land (b \Rightarrow a)$} \\ \hline
+		\textbf{Equivalence between implication and disjunction} & \multicolumn{2}{c|}{$a \Rightarrow b \equiv \neg a \lor b$} \\ \hline
+		\end{tabular} \vspace{.1in}
+		\caption{#1}
+		\label{#2}
+	\end{table}
+}
+
+\newcommand{\settheory}[2]{
+	\begin{table}[H]
+		\centering
+		\renewcommand*{\arraystretch}{1.4}
+		\begin{tabular}{| c | c | c | } \hline 
+			{\large \bf Operation} & 		{\large \bf Symbol} &  {\large \bf Definition } \\  \hline 
+			\textbf{Membership} & $x \in A$ & $x$ is a member of set $A$ \\ \hline
+			\textbf{Non-membership} & $x \notin A$ & $ \neg (x \in A)$ \\ \hline
+			\textbf{Union} & $A \cup B$ & $\{ (x \in A) \lor (x \in B)$\}   \\ \hline
+			\textbf{Intersection} & $A \cap B$ & $\{ (x \in A) \land (x \in B)$\}   \\ \hline
+			\textbf{Relative complement of} $\mathbf B$ \textbf{given} $\mathbf A$ & $A - B$ & $\{ (x \in A) \land (x \notin B)$\}   \\ \hline 
+			\textbf{Universal (Absolute) complement} & $\overline{A}$ & $\{x \notin A\}$\\ \hline
+			\textbf{Cartesian Product} & $A \times B$ & $\{(a, b) \mid   (a \in A) \land (b \in B)  \}$ \\ \hline
+			\textbf{Subset} & $A \subseteq B$ & $(\forall x \in A)[x \in B] $\\ \hline
+			\textbf{Superset} & $A \supseteq B$ & $ B \subseteq A$\\ \hline
+			\textbf{Set equality} & $A = B$ & $(A \subseteq B) \land (B \subseteq A) $ \\ \hline
+			\textbf{Set non-equality} & $A \neq  B$ & $\neg (A =B) $ \\ \hline
+			\textbf{Proper subset} & $A \subset B$ & $ \{ (A \subseteq B) \land (A \neq B) \} $ \\ \hline
+			\textbf{Proper superset} & $A \supset B$ & $ \{ (A \supseteq B) \land (A \neq B) \} $ \\ \hline
+			\textbf{Powerset} & $\Pset{A} $ & $ \{ X \mid X \subseteq A \} $ \\ \hline
+		\end{tabular}
+		\vspace{.1in}
+		\caption{#1}
+		\label{#2}
+	\end{table}
+}
+
+% A useful environment for the questions where I ask students to provide two infinite domains
+% which make a quantified statement true and false. Needs \myline.
+
+\newcommand{\innerlist}{
+	\begin{itemize}
+		\setlength\itemsep{1em}	
+		\item[-] $D_T=$ \myline{2in}
+		\item[-] $D_F=$ \myline{2in}
+	\end{itemize}
+}
+
+% Induction - related
+\newcommand{\indbase}[1]{
+	\begin{center}
+		\textbf{WRITE YOUR INDUCTIVE BASE BELOW THIS LINE} \\
+		\hrulefill
+	\end{center}
+   	\vspace{#1}
+}
+
+\newcommand{\indhypothesis}[1]{
+	\begin{center}
+		\textbf{WRITE YOUR INDUCTIVE HYPOTHESIS BELOW THIS LINE} \\
+		\hrulefill
+	\end{center}
+   	\vspace{#1}
+}
+
+
+\newcommand{\indstep}[1]{
+	\begin{center}
+		\textbf{WRITE YOUR INDUCTIVE STEP BELOW THIS LINE} \\
+		\hrulefill
+	\end{center}
+   	\vspace{#1}
+}
+
+
+\newcommand{\contindbase}[1]{
+	\begin{center}
+		\textbf{CONTINUE YOUR INDUCTIVE BASE BELOW THIS LINE} \\
+		\hrulefill
+	\end{center}
+   	\vspace{#1}
+}
+
+\newcommand{\contindhypothesis}[1]{
+	\begin{center}
+		\textbf{CONTINUE YOUR INDUCTIVE HYPOTHESIS BELOW THIS LINE} \\
+		\hrulefill
+	\end{center}
+   	\vspace{#1}
+}
+
+
+\newcommand{\contindstep}[1]{
+	\begin{center}
+		\textbf{CONTINUE YOUR INDUCTIVE STEP BELOW THIS LINE} \\
+		\hrulefill
+	\end{center}
+   	\vspace{#1}
+}
+
+
+\newcommand{\standardinductionspace}{
+	\indbase{2.5in}
+	\indhypothesis{1.5in}
+	\pagebreak
+	\indstep{\paperheight}
+}

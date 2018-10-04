@@ -1,0 +1,95 @@
+\newcommand{\myline}[1]{\underline{\hspace{#1}}}
+\newcounter{problems}
+\newcounter{questions}[problems]
+\newcommand{\problem}[2]{\stepcounter{problems} {\Large \bf \noindent Problem \arabic{problems}: #1 \emph{(#2 pts)}} \\[.4cm]}
+\newcommand{\question}[2]{\stepcounter{questions} \noindent{\emph{\Large Question (\alph{questions}): #1 (#2 pts) }\\[.4cm]}}
+
+% Some standard centering and italicization of text.
+\newcommand{\frontrowcenter}[1]{\begin{center}{\em \Large  #1  }\end{center}}
+
+% A blank page
+\newcommand{\blankpage}{
+\clearpage
+\vspace*{\fill}
+	\begin{minipage}{\textwidth}
+		\hspace{.5in} \Large \textbf{THIS PAGE INTENTIONALLY LEFT BLANK}\\
+	\end{minipage}
+\vfill % equivalent to \vspace{\fill}
+\clearpage
+}
+
+\newcommand{\answerspace}[1]{
+	\begin{center}
+		\textbf{BEGIN YOUR ANSWER BELOW THIS LINE} \\ \hrulefill \vspace{#1} \\ \hrulefill
+	\end{center}
+}
+
+\newcommand{\answerspacefullpage}{
+	\begin{center}
+		\textbf{BEGIN YOUR ANSWER BELOW THIS LINE} \\ \hrulefill \pagebreak
+	\end{center}
+}
+
+
+\newcommand{\additionalanswerspace}[1]{
+	\begin{center}
+		\textbf{CONTINUE YOUR ANSWER FOR #1 BELOW THIS LINE } \\ \hrulefill \vspace{#1} \\ \hrulefill
+	\end{center}
+}
+
+\newcommand{\additionalanswerspacefullpage}{
+	\begin{center}
+		\textbf{CONTINUE YOUR ANSWER BELOW THIS LINE} \\ \hrulefill \pagebreak
+	\end{center}
+}
+
+\newcommand{\freespace}[1]{
+	\begin{center}
+		\large \textbf{SCRAP SPACE BELOW} \\ 
+		\hrulefill
+		\pagebreak 
+	\end{center}
+}
+
+\newcommand{\silentanswerspace}[1]{
+	\\ \hrule \vspace{#1} \hrule 
+}
+
+
+\newcommand{\notespage}{
+	\pagebreak
+	\begin{center}
+		\Large \textbf{SCRAP PAPER} \\ \hrulefill
+	\end{center}
+	\pagebreak
+}
+
+\newcommand{\showyourwork}{
+	\begin{center}
+		\large \textbf{SHOW YOUR WORK BELOW} \\ 
+		\hrulefill
+		\pagebreak
+	\end{center}
+}
+
+% Space for T/F:
+\newcommand{\tfline}{\myline{.5cm}}
+
+% For sets:
+\newcommand{\curlybraces}[1]{\ensuremath{\lbrace #1 \rbrace}}
+
+% For cardinalities:
+\newcommand{\crd}[1]{\ensuremath{ \big \vert #1 \big \vert }}
+
+\newcommand{\yesno}{{\footnotesize YES / NO}}
+\newcommand{\truefalse}{{\normalsize  \bf TRUE / FALSE}}
+
+% \item environments coupled with a line at the end, for students to write T and F in.
+\newcommand{\tfitem}[1]{\item #1 \null\hfill \tfline}
+\newcommand{\setitem}[1]{\tfitem{$\curlybraces{#1}$} }
+\newcommand{\lineitem}[1]{\item #1 \null \hfill \myline{1in}}
+
+% Some circles for people to fill in,
+\newcommand{\whitecircle}[1]{\tikz[baseline=-0.5ex]\draw[black, radius=#1] (0,0) circle ;}
+%\newcommand{\blackcircle}[2][black,fill=black]{\tikz[baseline=-0.5ex]\draw[black,radius=#1] (0,0)}
+\newcommand{\blackcircle}[1]{\tikz\draw[black,fill=black,radius=#1] (0,0) circle (.5ex);}%
