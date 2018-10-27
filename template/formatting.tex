@@ -1,8 +1,10 @@
 \newcommand{\myline}[1]{\underline{\hspace{#1}}}
 \newcounter{problems}
 \newcounter{questions}[problems]
+\newcounter{subquestions}[questions]
 \newcommand{\problem}[2]{\stepcounter{problems} {\Large \bf \noindent Problem \arabic{problems}: #1 \emph{(#2 pts)}} \\[.4cm]}
 \newcommand{\question}[2]{\stepcounter{questions} \noindent{\emph{\Large Question (\alph{questions}): #1 (#2 pts) }\\[.4cm]}}
+\newcommand{\subquestion}[2]{\stepcounter{subquestions} \noindent{\emph{\Large Subquestion (\roman{questions}): #1 (#2 pts) }\\[.4cm]}}
 
 % Some standard centering and italicization of text.
 \newcommand{\frontrowcenter}[1]{\begin{center}{\em \Large  #1  }\end{center}}
@@ -72,6 +74,14 @@
 	\end{center}
 }
 
+\newcommand{\justifywork}{
+	\begin{center}
+		\large \textbf{JUSTIFY YOUR ANSWERS BELOW} \\ 
+		\hrulefill
+		\pagebreak
+	\end{center}
+}
+
 % Space for T/F:
 \newcommand{\tfline}{\myline{.5cm}}
 
@@ -85,7 +95,7 @@
 \newcommand{\truefalse}{{\normalsize  \bf TRUE / FALSE}}
 
 % \item environments coupled with a line at the end, for students to write T and F in.
-\newcommand{\tfitem}[1]{\item #1 \null\hfill \tfline}
+\newcommand{\tfitem}[1]{\item #1 \null\hfill \framebox(25,25){} \\ \hdashrule{0.95\textwidth}{1pt}{2pt}}
 \newcommand{\setitem}[1]{\tfitem{$\curlybraces{#1}$} }
 \newcommand{\lineitem}[1]{\item #1 \null \hfill \myline{1in}}
 
