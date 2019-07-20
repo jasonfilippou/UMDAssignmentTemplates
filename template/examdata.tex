@@ -1,4 +1,6 @@
 \newcommand{\examdata}[5]{
+  % \pagestyle{myheadings}
+  % \thispagestyle{plain}
    \newpage
    \setcounter{page}{1}
    \noindent
@@ -14,15 +16,16 @@
 	        \vspace{4mm}
      	        \hbox to 6.9in { {\Large  \hfill   \textbf{Date}: #4 \hfill }} 
      	        \vspace{4mm}
-     	        \hbox to 6.9in { {\Large  \hfill   \textbf{Time}: #5 \hfill } }  	             	       
+     	        \hbox to 6.9in { {\Large  \hfill   \textbf{Time}: #5 \hfill } }
      	         
        	        \vspace{8mm}
    \hbox to 7.2in { {\it First and last name ({\bf exactly} as on ELMS): \myline{3in} \hfill} }
 	        \vspace{4mm}
-   \hbox to 7.7in {  {\it UID (9 digits):} \myline{1.4in} \hfill	
-   
-}				
-			
+   \hbox to 7.7in {  {\it UID (9 digits):} \myline{1.4in} \hfill}
+		        \vspace{4mm}
+	   \hbox to 7.7in {  {\it First name of your professor:} \myline{1.4in} \hfill}
+				        \vspace{2mm}
+
 	        \begin{center}
 	        	\textbf{University Honor Pledge:} \\[.2in]
 	        	\emph{I pledge on my honor that I have not given or received \\
@@ -36,6 +39,6 @@
 	   	  } % vbox
 	   } % framebox
    \end{center}
-   \markboth{#3-- #1}{#3 -- #1}
+   \markboth{#3--#1}{#3 -- #1}
    \vspace*{4mm}
 }

@@ -1,0 +1,334 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template for UMD Assignments.
+% Created by Jason Filippou (jasonfil@cs.umd.edu)
+% Maintained at: https://github.com/JasonFil/UMDAssignmentTemplates
+% Check LICENSE file on GitHub for licensing. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Document class will always be article for the purposes of UMD assignments
+\documentclass[letterpaper,12pt]{article}
+
+%%%%%%%%%%%%%  IMPORT MACRO FILES AS NEEDED %%%%%%%%%%%
+\input{../../latex_template/packageimports}
+\input{../../latex_template/mymath}
+\input{../../latex_template/code}
+\input{../../latex_template/formatting}
+\input{../../latex_template/emphasis}
+\input{../../latex_template/cool}
+\input{../../latex_template/homeworkdata}
+% \input{../../latex_template/databox} % Edit this file for variable problem numbers in grading box
+% \input{../../latex_template/cards}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Tweak the following based on what you think the current document needs:
+\usepackage[inner=1cm,outer=1cm,top=1cm,bottom=2cm]{geometry}
+\setlength{\parindent}{2em}
+\setlength{\itemindent}{.5in}
+
+% Title of the current document
+\title{CMSC420, Spring '19: Homework \#1}
+
+% Some commands useful for this document:
+\newcommand{\gitproblemline}{\myline{0.9\textwidth}}
+\newcommand{\Xt}{\small \textcolor{gray}{\texttt{X}}}
+
+\begin{document}
+
+\homeworkdata{CMSC 420}{Spring 2019}{1}
+
+\problem{You suck at cooking}{15}
+
+\begin{figure}[H]
+\centering
+	\begin{subfigure}{.3\textwidth}
+	  \centering
+	  \includegraphics[width=.8\linewidth]{img/butternutSquash}
+	  \caption*{}
+	\end{subfigure}%
+	\begin{subfigure}{.3\textwidth}
+	  \centering
+	  \includegraphics[width=.6\linewidth]{img/egg}
+	  \caption*{}
+	\end{subfigure}
+		\begin{subfigure}{.3\textwidth}
+	  \centering
+	  \includegraphics[width=.8\linewidth]{img/sandwichOfJustice}
+	  \caption*{}
+	\end{subfigure}
+\caption{Yeah, you totally suck.}
+\label{fig:youSuckAtCooking}
+\end{figure}
+
+\frontrowcenter{Please note: This is a \makered{real} homework assignment, worth 15\% of your homework credit.}
+
+\newcommand{\fillspace}[1]{\null\hfill\myline{#1}}
+
+Watch the recipes for \href{https://www.youtube.com/watch?v=GYl7h8iDjsY}{Butternut Squash}, \href{https://www.youtube.com/watch?v=JsB57FtaxXQ}{Modified Ramen} and the \href{https://www.youtube.com/watch?v=iqhJvadqtAc}{Sandwich of Justice} from the YouTube channel \href{https://www.youtube.com/channel/UCekQr9znsk2vWxBo3YiLq2w}{You Suck At Cooking} and answer the following questions:
+
+\ \\ 
+
+
+	
+\question{Butternut Squash}{5}
+\begin{enumerate}[label=(\roman*)] \vspace{-.3in} 
+	\setlength{\itemsep}{2em}
+	\item Butternut squash is also known as nature's... \fillspace{2in} 
+	\item What is the name of the \textbf{family} that butternut squash comes from? \fillspace{2in}
+	\item If you want your butternut squash to be more \textbf{buttery and nutty}, \\ how long must you \textbf{marinate} it for? \fillspace{2in}
+	\item What should you do to \textbf{counter-act} the \textbf{healthy effects} of butternut squash? \fillspace{1.8in} \\ \ \\ \fillspace{2in}  \pagebreak
+	\item Name \textbf{all 6 (six)} variations of squash that you can try if you don't like butternut squash. \ \\
+	\begin{itemize}
+		\setlength{\itemsep}{1.5em}
+		\item \myline{3in}
+		\item \myline{3in}
+		\item \myline{3in}
+		\item \myline{3in}
+		\item \myline{3in}
+		\item \myline{3in}
+	\end{itemize}
+\end{enumerate}
+
+\ \\ 
+
+\question{Modified Ramen}{5} \vspace{-.3in} 
+
+
+\begin{enumerate}[label=(\roman*)]
+	\setlength{\itemsep}{2em}
+	\item According to {\bf whom} do you need ramen to survive if you're in college? \fillspace{2in}
+	\item To counter-act \textbf{WABS}, where should you place the \textbf{flavor packet}?. \fillspace{2in}
+	\item In the \textbf{Spicy Peanut} ramen variation, why should you use {\bf aggression}? \fillspace{2in}
+	\item  What kind of \textbf{cement} should you {\bf not} confuse {\bf artery cement} with? \fillspace{2in}
+	\item What \textbf{product} does the video creator's \textbf{startup company} \textbf{mail} to customers? \fillspace{1.8in}  \\ \ \\ \fillspace{2in} \\ \ \\ \  \fillspace{2in}
+\end{enumerate}
+
+\question{Sandwich Of Justice}{5} \vspace{-.3in} 
+
+\begin{enumerate}[label=(\roman*)]
+	\setlength{\itemsep}{2em}
+
+	\item What is the name of the \textbf{egg} that is obsessed with the possible \textbf{homicide} of a fellow egg? \fillspace{1.0in} 
+	\item What is the name of the {\bf dog} of that particular {\bf egg}? \fillspace{2in} 
+	\item What does a {\bf perfectly timed egg} create when placed inside the sandwich? \fillspace{2in} \\ \ \\ \fillspace{2in}
+	\item Which aspect of the sandwich is compromised if the bread slices aren't {\bf wide} enough? \fillspace{1.5in} \\ \ \\ \fillspace{2in} 
+	\item After \textbf{serving} this sandwich to somebody, what should you \textbf{say}? \fillspace{2.4in} 
+\end{enumerate}
+
+\ \\ 
+
+\ecquestion{Your own kitchen nightmare(s)}{5}
+ 
+Use the space below to describe \textbf{a funny personal failure} that involves \textbf{food preparation}. Perhaps  you confused sugar with salt or cinnamon with paprika.\footnote{Neither one of those things have happened to Jason.} Or maybe you thought it was a good idea to warm up olive oil in a pot with the lid on.\footnote{Or this one.} It can be anything you have experienced or witnessed. \textbf{The top 3 funniest responses} will be shared on Piazza, \textbf{anonymously}. If you would rather we don't share your response, let us know in the response itself! \ \\ \ \\ 
+
+
+\Repeat{14}{\hrule \ \\ \ \\ } 
+
+\pagebreak
+
+\problem{Syllabus / Deadlines}{15}
+
+\frontrowcenter{To answer some of the questions of this problem, you will need to navigate our course's ELMS page and study our syllabus.}
+
+\vskip+1.0cm
+% STUDENT: Replace all instances of \myline{...}  \underline{your response}.
+\begin{enumerate}[label=(\alph*)]
+\setlength{\itemsep}{1.5em}
+	\item What is the due date of your \textbf{first} \textbf{homework}? \null \hfill \myline{2in}
+	\item What is the due date of your \textbf{first} \textbf{project}? \null \hfill \myline{2in}
+	\item What is the \textbf{date and time} of your \textbf{midterm}? \null \hfill \myline{2in}
+	\item What is the \textbf{building \& room} where your \textbf{midterm} will take place? \null \hfill \myline{2in}
+	\item What is the \textbf{date and time} of your \textbf{final}? \null \hfill \myline{2in}
+\end{enumerate} \vspace{-.2in}
+ 
+
+\pagebreak
+
+\problem{Git Basics}{20}
+
+To pull the starter code for our projects, you will need to familiarize yourselves with the VCS \textbf{Git}, since the entire skeleton code will be hosted on a \href{https://github.com/JasonFil/CMSC420-Spring2019}{GitHub repository} that we maintain for you. To answer this problem effectively, you will need to study up on Git. Please navigate to the page named ``More Resources" on our \href{https://myelms.umd.edu/courses/1257148}{ELMS website} if you would like a starting point. Of course, Google is always your friend.
+
+While a large subset of Git's functionality can be implemented using \href{https://git-scm.com/download/gui/linux}{various graphical tools}, there is {\bf no substitute} for the modularity, ease and cross-platform compatibility of using simple command line instructions from the shell. In this class, you will need to familiarize yourselves with a {\bf very basic} subset of available Git commands.
+
+For every one of the following tasks, write the {\bf full} command that would be necessary to type on a command line in order for you to achieve the relevant task. Your answer should include: 
+	\begin{itemize} \setlength{\itemsep}{.5em}
+		\item The system program {\tt git}.
+		\item The command to be passed to the program {\tt git} (e.g. {\tt add}, {\tt checkout}, {\tt push}, etc).
+		\item Any flags to be passed to the command, e.g {\tt -b}, {\tt --cached}, {\tt -u}.
+		\item Arguments that the command itself may need (e.g branch names, file paths, names of remotes, entire quoted strings, etc).
+	\end{itemize}
+	
+You are {\bf quite encouraged} to try the commands out in your console before writing your responses below. In fact, the first four commands are a fine example of how you could start implementing your first project! We will provide you with the answer to the first question to help start you off. Note that this command does not have any \textbf{flags}, but it does, of course, have a URL argument.
+
+% STUDENT: Replace all instances of  \item[] \gitproblemline with \item[] \underline{your response}. 
+\begin{enumerate}[label=(\alph*)]
+\setlength{\itemsep}{.8em}
+	\item Clone the repository {\tt https://github.com/JasonFil/CMSC420-Spring2019.git} into the current directory, \textbf{using HTTPS}.
+	\item[] \underline{\tt  \makered{git clone https://github.com/JasonFil/CMSC420-Spring2019.git } }
+	\item Rename the remote {\tt origin} to {\tt classrepo}.
+		\item[] \gitproblemline
+	\item Rename the current branch to {\tt skeletoncode}.
+		\item[] \gitproblemline
+	\item Switch from the current branch to a {\bf new} branch called {\tt myimplem}.  
+		\item[] \gitproblemline
+	\item {\bf Stage} a Java source file which you just created and which you named {\tt MyStack.java}.
+		\item[] \gitproblemline
+	\item Make a \textbf{commit} from the current branch ({\tt myimplem}) with message ``Fixed stack popping issue.".
+		\item[] \gitproblemline	\pagebreak
+		\item Switch back to the branch {\tt skeletoncode}.
+		\item[] \gitproblemline
+		\item {\bf Merge} the branch {\tt myimplem} with the current branch, {\tt skeletoncode}.
+	\item[] \gitproblemline
+	\item \textbf{Push} your latest commit upstream.
+		\item[] \gitproblemline
+		\item List all your remotes.
+			\item[] \gitproblemline
+	\item Delete a remote called {\tt server2}.
+		\item[] \gitproblemline
+		\item Assuming you have applied changes to 10,000 different files (e.g by having your IDE automatically create \textbf{Scaladocs} for the entire code base of \textbf{Twitter}), type a \textbf{single command} that will stage  the files tracked by {\tt git} and to which the changes have been made.
+		\item[] \gitproblemline
+	\item Tweak your {\bf global, system-wide} Git configuration so that instead of typing {\tt git log -1 HEAD} to  \\ show your last commit's information, you could instead type the shorthand {\tt git last}.
+		\item[] \gitproblemline
+\end{enumerate}
+
+\pagebreak
+
+\problem{Sparse Matrix Representations}{25}
+
+Whether stored in column or row - major order, two-dimensional matrices can be a big bottleneck in terms of memory if they are \textbf{sparse}, that is, they have lots of {\tt null} cells. For example, the matrix shown in Table \ref{tbl:sparseMat} is quite sparse; only about $14\%$ of it is occupied!
+
+\begin{table}[H]
+    \centering
+	\begin{tabular}{c | c c c c c c c c} 
+		\  & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} \\ \hline 
+		\textbf{0} & \textbf{11} & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt \\
+		\textbf{1} & \Xt & \Xt & \Xt & \Xt & \Xt & $\mathbf{3}$ & \Xt & \Xt \\
+		\textbf{2} & \Xt & \textbf{-3} & \textbf{4} & \Xt & \Xt & \Xt & \Xt & \Xt \\
+		\textbf{3} & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt \\	
+		\textbf{4} & \Xt & \Xt & \textbf{11} & \textbf{6} & \Xt & \Xt & \Xt & $\mathbf{e^2}$ \\
+		\textbf{5} & \textbf{-1} & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt \\
+		\textbf{6} & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt & $\mathbf{\sqrt{3}}$ & \Xt \\
+		\textbf{7} & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt & \Xt \\	
+	\end{tabular}
+	\caption{A sparse matrix.  \Xt = \texttt{null} for brevity.}
+	\label{tbl:sparseMat}
+\end{table}
+
+Programming languages such as {\tt MATLAB} offer built-in functionality (methods or operators included in the ``standard library" of the language) to {\em sparsify} a matrix. Sparsifying a matrix consists of transforming it into a l\textbf{inked list} which contains information {\em only for those cells of the matrix that have been filled in}. Every node of this list contains the $(i, j)$ coordinates of the relevant cell, as well as the data originally held in the cell. 
+
+To answer some of the following questions, you will have to review {\bf asymptotic notation}. We have a resource page on ELMS, with CMSC250 slides linked, where you can review ``big-Oh" (\bigoh{$\cdot$}), ``big-Theta" (\bigtheta{$\cdot$}) and ``big-Omega" (\bigomega{$\cdot$}). 
+
+For example, if you believe that a certain operation has time complexity {\em at most proportional to} $M$ (e.g, $2M, 2.5M, 4M - 7$), you should answer with \bigoh{$M$}. If instead you believe that it has time complexity at most proportional to the \textbf{square} of $M$ multipled by $N$ (e.g, $10 M ^2N + 2N$), you should answer with \bigoh{$M^2 N$}. If you believe that the operation runs in time {\bf exactly} proportional to $M^2 \cdot N$, you should answer with \bigtheta{$M^2 \cdot N$}.
+
+\vspace{1in} 
+\frontrowcenter{Questions on opposite page...}
+
+\pagebreak
+
+\begin{enumerate}[label=(\roman*)]
+	\item Make a drawing of the sparsification of matrix shown in Table \ref{tbl:sparseMat}, assuming {\bf row-major} order. Recall what your nodes should contain.  \vspace{-.1in}
+	
+	\answerspace{2in}
+	
+	\item Perform the same task, this time assuming {\bf column-major} order. \vspace{-.1in}
+	
+	% STUDENT: Same as above.
+
+	\answerspace{2in}
+	
+	\item Suppose that our original matrix has dimensions $M \times N$. As a function of those two variables, and using \textbf{``big-Theta" (\bigtheta}{$\cdot$}\textbf{) notation}, what is the {\bf space} that the sparse matrix occupies in memory, in its \textbf{original} representation?  \myline{1in} 
+	
+	\item Using \textbf{``big-Oh" (\bigoh}{$\cdot$}\textbf{) notation}, what is the space that the matrix occupies in its \textbf{sparsified} \\ format? \myline{1in}
+	
+	\item Suppose that $0 \leq i < M$ and $0 \leq j < N$. In its \textit{original} representation, and using \textbf{whichever} asymptotic notation you consider appropriate, what is the \textbf{time complexity} of assigning the cell ($(i, j)$) a value of, say, $3$ in the matrix's {\bf original} representation? \myline{1in}
+	\item What is the time complexity of the same operation in the {\bf sparsified} representation (again, in the most appropriate asymptotic notation)? \myline{1in}
+\end{enumerate}
+\pagebreak
+
+\problem{Graph representations}{25}
+
+Observe the graph of figure \ref{fig:graph}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.9]{img/graph}
+	\caption{A conceptual image of a graph. Nodes are enumerated from  $0$ (zero) \\ for consistency with later drawings.}
+	\label{fig:graph}
+\end{figure}
+
+There are two common ways in which graphs, directed or undirected, are represented in computer memory: the {\bf adjacency matrix} (Table \ref{tbl:adjMat}) and the \textbf{adjacency list} (Figure \ref{fig:adjList}).  
+
+\begin{table}[H]
+	\centering
+		\renewcommand*{\arraystretch}{1.5}
+	\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+			&   \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\ \hline
+		\textbf{0} & 0  & 0 & 3 & 0 & 0  & 0 \\ \hline
+		\textbf{1} & 5  & 3 & 0 & 0 & 0 & 0 \\ \hline
+		\textbf{2} & 1  & 6 & 0 & 1 & 0 & 0 \\ \hline
+		\textbf{3} & 0  & 0 & 0 & 0 & 4 & 0 \\ \hline
+		\textbf{4} & 0 & 0 & 2 & 0 & 0 & 0 \\ \hline 
+		\textbf{5} & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline 
+	\end{tabular} 
+	\caption{The {\bf adjacency matrix} representation of the graph of Figure \ref{fig:graph}.}
+	\label{tbl:adjMat}
+\end{table}
+
+Let $V$ be the number of {\bf nodes} (or vertices) in a given graph $G$ and $E$ be the number of its \textbf{edges}. The adjacency matrix is a $V \times V$ matrix $M$ where: 
+
+$$M(i, j) = \begin{cases} w, & \textit{where } w > 0 \textit{ is the weight of the edge } i \rightarrow j \\ 0,  & \textit{if there is no edge } i \rightarrow j \end{cases}$$
+
+In \textbf{unweighted} graphs, $w = 1$ for all edges. 
+
+{\bf Undirected} graphs, on the other hand, have the interesting property that their adjacency matrix is   {\bf symmetric}: 
+
+$$(\forall i , j \in \{ 1, 2, \dots , V \})[M(i, j ) = M(j, i)]$$. 
+
+The {\bf adjacency list} representation of this graph is a single-dimensional array $A$ of length $V$, defined as follows:
+
+$$A(i) = \{ v,\ \textit{if vertex } v \textit{ is connected to vertex  } i \textit{ in } G \}$$
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=.8]{img/adjList}
+	\caption{The {\bf adjacency list} representation of the graph of Figure \ref{fig:graph}. Every node \\ in the list contains a tuple (\textbf{target\_node\_id, weight}).}
+	\label{fig:adjList}
+\end{figure}
+
+So $A(i)$ points to the \textbf{set} of all vertices $v$ on which $i$ is incident. These sets are typically organized as \textbf{linked lists}, as implied by Figure \ref{fig:adjList}. These lists do \textbf{not have to be sorted in any way}. For this question, we will assume that:
+
+	\begin{itemize}
+		\item The heads of the sets are contained in a classic, one-dimensional contiguous storage array ({\bf not} a ``dynamic" array like Java's {\tt ArrayList} and C++'s {\tt Vector}). So the entire adjacency list representation will consist of an \textbf{array of lists} (see Figure \ref{fig:adjList}).
+		\item The lists themselves are organized as {\bf classic, bare-bones linked lists}. This means that we will {\bf not} endow these lists with a pointer to their last element, and we will also {\bf not} have a link pointing to the previous node from every node (i.e the linked lists are {\bf not} doubly-connected) (see Figure \ref{fig:adjList}).
+	\end{itemize} 
+	
+Furthermore, we add a little twist to these representations, based on information from problem 4. We will consider a {\bf sparse adjacency matrix} representation of this graph (linked list of only non-{\tt null} elements). Figure \ref{fig:sparseAdjMat} shows how the graph of Figure \ref{fig:graph} is represented in such a format.
+
+\begin{figure}[H]
+		\centering
+		\includegraphics[scale=.8]{img/sparseAdjMat}
+		\caption{The {\bf sparse adjacency matrix} representation of the graph of Figure 
+		\ref{fig:graph}. The matrix has been scanned in row-major order (but does it really matter which order we use?)}
+	\label{fig:sparseAdjMat}
+\end{figure}
+
+ Your task is to fill-in Table \ref{tbl:complexities} using appropriate complexity notation, coupled with the parameters $V$ and $E$. For example, if you believe that a certain operation will take time \textit{proportional} to the {\bf cube} of the number of nodes $V$, you should answer with \bigoh{$V^3$}. Or, if you believe that the operation will take time proportional to the product of vertices multiplied by the logarithm base 2 of the number of edges $E$, you should answer \bigoh{$V \cdot \log_2E$}. Finally, also consider the fact that $0 \leq E \leq V^2$, since the ``worst case" for the number of edges in a graph is $V^2$, for a $V$-clique.
+
+\begin{table}[H]
+	\centering
+	\renewcommand*{\arraystretch}{2.0}
+	\begin{tabular}{|p{4.5cm}|c|c|c|} \hline
+		\textbf{Operation} & \textbf{Adjacency Matrix} & \textbf{Adjacency List} & \textbf{Sparse Adjacency Matrix} \\ \hline
+		Is node $i$ \textbf{connected} to node $j$? & & & \\ \hline
+		Add a new \textbf{node} $k$. & & & \\ \hline
+		Add the \textbf{edge} $i \rightarrow j$. & & & \\  \hline
+		Remove a \textbf{node} $\ell$. & & & \\ \hline
+		Remove the \textbf{edge} $i \rightarrow j$.  & & & \\ \hline
+		Spatial Complexity & & & \\  \hline
+	\end{tabular}
+	\caption{Fill in this table with appropriate asymptotic notation.}
+	\label{tbl:complexities}
+\end{table}		
+
+\vspace{.8in}
+
+\end{document}
