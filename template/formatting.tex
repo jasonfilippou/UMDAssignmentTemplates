@@ -4,9 +4,7 @@
 \newcounter{subquestions}[questions]
 \newcommand{\problem}[2]{\stepcounter{problems} {\Large \bf \noindent Problem \arabic{problems}: #1 \emph{(#2 pts)}} \\[.4cm]}
 \newcommand{\question}[2]{\stepcounter{questions} \noindent{\emph{\Large Question (\alph{questions}): #1 (#2 pts) }\\[.4cm]}}
-\newcommand{\ecquestion}[2]{\stepcounter{questions} \noindent{\emph{\Large Question (\alph{questions}): #1 (#2 pts extra credit) }\\[.4cm]}}
 \newcommand{\subquestion}[2]{\stepcounter{subquestions} \noindent{\emph{\Large Subquestion (\roman{subquestions}): #1 (#2 pts) }\\[.4cm]}}
-\newcommand{\ecproblem}{\stepcounter{problems} {\Large \bf \noindent Problem \arabic{problems}:  General Trivia \emph{(1 pt extra credit)}} \\[.4cm]}
 
 % Some standard centering and italicization of text.
 \newcommand{\frontrowcenter}[1]{\begin{center}{\em \Large  #1  }\end{center}}
@@ -47,7 +45,7 @@
 	\end{center}
 }
 
-\newcommand{\freespace}{
+\newcommand{\freespace}[1]{
 	\begin{center}
 		\large \textbf{SCRAP SPACE BELOW} \\ 
 		\hrulefill
@@ -99,7 +97,7 @@
 % \item environments coupled with a line at the end, for students to write T and F in.
 \newcommand{\tfitem}[1]{\item #1 \null\hfill \framebox(25,25){} \\ \hdashrule{0.95\textwidth}{1pt}{2pt}}
 \newcommand{\setitem}[1]{\tfitem{$\curlybraces{#1}$} }
-\newcommand{\lineitem}[1]{\item #1 \null \hfill \myline{1in}}
+\newcommand{\lineitem}[2]{\item #1 \null \hfill \myline{#2}}
 
 % Some circles for people to fill in,
 \newcommand{\whitecircle}[1]{\tikz[baseline=-0.5ex]\draw[black, radius=#1] (0,0) circle ;}
