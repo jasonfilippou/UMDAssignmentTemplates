@@ -1,3 +1,9 @@
+# Mac
+.DS_Store
+
+# Windows
+.ini
+
 # LaTeX .gitignore template found here:
 # https://github.com/github/gitignore/blob/master/TeX.gitignore
 
