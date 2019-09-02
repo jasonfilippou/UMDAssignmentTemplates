@@ -99,7 +99,6 @@
 \newcommand{\setitem}[1]{\tfitem{$\curlybraces{#1}$} }
 \newcommand{\lineitem}[2]{\item #1 \null \hfill \myline{#2}}
 
-% Some circles for people to fill in,
+% Some circles and squares for students to fill in.
 \newcommand{\whitecircle}[1]{\tikz[baseline=-0.5ex]\draw[black, radius=#1] (0,0) circle ;}
-%\newcommand{\blackcircle}[2][black,fill=black]{\tikz[baseline=-0.5ex]\draw[black,radius=#1] (0,0)}
-\newcommand{\blackcircle}[1]{\tikz\draw[black,fill=black,radius=#1] (0,0) circle (.5ex);}%
+\newcommand{\whitesquare}[1]{\tikz[baseline=-0.5ex]\draw[black] (0,0) rectangle(#1, #1) ;}
