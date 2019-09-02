@@ -1,0 +1,37 @@
+\newcommand{\worksheetdata}[4]{
+	\begin{mdframed}[linewidth=1pt]
+	\begin{center}
+		\hspace{-.5cm}
+	   \framebox{
+	      \vbox{ \vspace{2mm}
+			\noindent\makebox[\textwidth]{\LARGE \bf #1, #2 }
+			\Repeat{2}{\ \\}
+			\noindent\makebox[\textwidth]{\Large \bf  Worksheet \##3 }
+	  		\Repeat{2}{\ \\}
+	   		\noindent\makebox[\textwidth]{\large \bf  Date: #4}
+			\Repeat{2}{\ \\}
+			\noindent\makebox[\textwidth]{\large \bf  \textbf{\underline{First}} \& \textbf{\underline{Last}} Name:  \enspace \myline{4in}}
+			\Repeat{2}{\ \\}
+				\noindent\makebox[\textwidth]{\large \bf  UID (9 digits): \enspace \myline{3in}}
+			\Repeat{2}{\ \\ }
+		}
+	}
+		\end{center}
+	\end{mdframed}
+}
+
+\newcommand{\mistakespace}[1]{
+	\vspace{0.5cm}
+	\begin{center}
+		\textbf{WRITE DOWN WHAT WAS CONFUSING FOR YOU UNDER THIS LINE} \\ \hrulefill \vspace{#1} \\ \hrulefill
+	\end{center}
+}
+
+\newcommand{\mistakespacefullpage}{
+	\vspace{0.5cm}
+	\begin{center}
+		\textbf{WRITE DOWN WHAT WAS CONFUSING FOR YOU UNDER THIS LINE} \\ \hrulefill 
+	\end{center}
+	\pagebreak
+
+}
